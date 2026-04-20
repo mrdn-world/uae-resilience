@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useReveal } from '@/composables/useReveal'
+import { t, tHtml } from '@/i18n'
 import SourceTip from './SourceTip.vue'
 import Sources from './Sources.vue'
 const { el, revealed } = useReveal()
@@ -75,13 +76,7 @@ onMounted(() => {
   onUnmounted(() => { cancelAnimationFrame(raf); window.removeEventListener('resize', resize) })
 })
 
-const layers = [
-  { name: 'THAAD', alt: '150 km', range: '200 km', what: 'Kills ballistic missiles in space before re-entry', note: 'First nation outside the US to have it', color: '#5B9FE4' },
-  { name: 'Patriot PAC-3', alt: '40 km', range: '70 km', what: 'Intercepts tactical missiles in the upper atmosphere', note: '9 batteries, 108 launchers', color: '#2ECC87' },
-  { name: 'Cheongung-II', alt: '25 km', range: '40 km', what: 'Medium-range defense ($3.5B deal with South Korea)', note: 'Battle-tested March 2026, >90% effective', color: '#A77BCA' },
-  { name: 'Pantsir-S1', alt: '15 km', range: '20 km', what: 'Short-range point defense — catches what others miss', note: '~50 units deployed', color: '#E8564A' },
-  { name: 'Laser & drone killers', alt: '2 km', range: '5 km', what: 'SkyKnight + Silent Hunter 30kW laser — last line vs drones', note: 'Made in UAE (EDGE Group)', color: '#D4A843' },
-]
+const layers = t('defense.layers') as Array<{ name: string, alt: string, range: string, what: string, note: string, color: string }>
 </script>
 
 <template>
@@ -89,8 +84,8 @@ const layers = [
     <div class="def-wrap">
 
       <div class="def-header">
-        <p class="def-label">AIR DEFENSE</p>
-        <h2>What happens when 137 missiles<br>are heading toward your cities?</h2>
+        <p class="def-label">{{ t('defense.label') }}</p>
+        <h2>{{ t('defense.headlineLine1') }}<br>{{ t('defense.headlineLine2') }}</h2>
       </div>
 
       <!-- Canvas sim + big result -->
@@ -98,14 +93,14 @@ const layers = [
         <div class="sim-box">
           <canvas ref="canvasRef" class="sim-canvas"></canvas>
           <div class="sim-overlay">
-            <div class="so-big">96%<SourceTip :sources="[{label:'MDAA',url:'https://www.missiledefenseadvocacy.org/international-cooperation/united-arab-emirates/'},{label:'SIPRI',url:'https://armstransfers.sipri.org/'}]" /></div>
-            <div class="so-sub">interception rate</div>
+            <div class="so-big">{{ t('defense.simBig') }}<SourceTip :sources="t('defense.simBigSources')" /></div>
+            <div class="so-sub">{{ t('defense.simSub') }}</div>
           </div>
         </div>
 
         <!-- 137 missiles visualized as dots -->
         <div class="missile-dots">
-          <div class="md-header">137 ballistic missiles — each dot is one missile</div>
+          <div class="md-header">{{ t('defense.missileHeader') }}</div>
           <div class="md-grid">
             <div v-for="i in 137" :key="i" class="md-dot"
               :class="{ hit: i > 132 }"
@@ -113,8 +108,8 @@ const layers = [
             ></div>
           </div>
           <div class="md-legend">
-            <span class="mdl"><span class="mdl-dot good"></span>132 intercepted</span>
-            <span class="mdl"><span class="mdl-dot bad"></span>5 got through — 6 killed, 141 injured</span>
+            <span class="mdl"><span class="mdl-dot good"></span>{{ t('defense.missileLegendGood') }}</span>
+            <span class="mdl"><span class="mdl-dot bad"></span>{{ t('defense.missileLegendBad') }}</span>
           </div>
         </div>
 
@@ -123,19 +118,15 @@ const layers = [
           <div class="drn-dots">
             <div v-for="i in 195" :key="i" class="drn-dot" :style="{ animationDelay: `${i * 5}ms` }"></div>
           </div>
-          <div class="drn-text"><strong>195</strong> attack drones destroyed</div>
+          <div class="drn-text">{{ t('defense.droneLabelPrefix') }}<strong>{{ t('defense.droneStrong') }}</strong>{{ t('defense.droneLabelSuffix') }}</div>
         </div>
       </div>
 
       <!-- Comparison: how 96% stacks up -->
       <div class="comparison">
-        <h3>How 96% compares</h3>
+        <h3>{{ t('defense.comparison.title') }}</h3>
         <div class="comp-rows">
-          <div class="comp-row" v-for="(c, i) in [
-            { sys: 'UAE (March 2026)', pct: 96, color: '#2ECC87' },
-            { sys: 'Israel Iron Dome', pct: 90, color: '#5B9FE4' },
-            { sys: 'US Patriot (Gulf War)', pct: 40, color: '#E8564A' },
-          ]" :key="c.sys">
+          <div class="comp-row" v-for="(c, i) in t('defense.comparison.rows')" :key="c.sys">
             <span class="comp-sys">{{ c.sys }}</span>
             <div class="comp-track">
               <div class="comp-bar" :style="{ width: revealed ? c.pct + '%' : '0%', background: c.color, transitionDelay: `${0.3 + i * 0.15}s` }"></div>
@@ -143,19 +134,19 @@ const layers = [
             <span class="comp-pct" :style="{ color: c.color }">{{ c.pct }}%</span>
           </div>
         </div>
-        <p class="comp-note">Different eras, different threats, different systems — but the gap is telling. The UAE's air defense performed at historically exceptional levels.</p>
+        <p class="comp-note">{{ t('defense.comparison.note') }}</p>
       </div>
 
       <!-- Altitude layers — proportional height diagram -->
       <div class="layers">
-        <h3>5 layers from space to rooftop — no gap in coverage</h3>
+        <h3>{{ t('defense.layersTitle') }}</h3>
         <div class="altitude-diagram">
           <div class="alt-scale">
-            <span class="alt-mark" style="bottom: 100%">150 km</span>
-            <span class="alt-mark" style="bottom: 27%">40 km</span>
-            <span class="alt-mark" style="bottom: 17%">25 km</span>
-            <span class="alt-mark" style="bottom: 10%">15 km</span>
-            <span class="alt-mark" style="bottom: 0%">Ground</span>
+            <span class="alt-mark" style="bottom: 100%">{{ t('defense.altMarks')[0] }}</span>
+            <span class="alt-mark" style="bottom: 27%">{{ t('defense.altMarks')[1] }}</span>
+            <span class="alt-mark" style="bottom: 17%">{{ t('defense.altMarks')[2] }}</span>
+            <span class="alt-mark" style="bottom: 10%">{{ t('defense.altMarks')[3] }}</span>
+            <span class="alt-mark" style="bottom: 0%">{{ t('defense.altMarks')[4] }}</span>
           </div>
           <div class="alt-bands">
             <div v-for="l in layers" :key="l.name" class="alt-band"
@@ -173,16 +164,8 @@ const layers = [
         </div>
       </div>
 
-      <div class="def-context">
-        <strong>Context:</strong> THAAD and Patriot ammunition is American-made — resupply during active conflict depends on a political decision in Washington. The UAE is building domestic capability (EDGE Group: $4.9B revenue, Top 25 globally), but most advanced systems are still imported. Localization is at ~25%; the target is 50%.
-      </div>
-      <Sources :items="[
-        { label: 'SIPRI Arms Transfers', url: 'https://armstransfers.sipri.org/' },
-        { label: 'SIPRI Military Expenditure', url: 'https://milex.sipri.org/' },
-        { label: 'MDAA — UAE Profile', url: 'https://www.missiledefenseadvocacy.org/international-cooperation/united-arab-emirates/' },
-        { label: 'EDGE Group', url: 'https://edgegroup.ae/' },
-        { label: 'GlobalFirepower', url: 'https://www.globalfirepower.com/country-military-strength-detail.php?country_id=united-arab-emirates' },
-      ]" />
+      <div class="def-context" v-html="tHtml('defense.context')"></div>
+      <Sources :items="t('defense.sources')" />
     </div>
   </section>
 </template>

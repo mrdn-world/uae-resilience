@@ -1,0 +1,279 @@
+{
+  "meta": {
+    "title": "UAE: Standing Strong",
+    "description": "How the UAE maintains national resilience during the 2026 regional crisis"
+  },
+  "hero": {
+    "kicker": "While other countries plan for crises,",
+    "titleLine1": "the UAE already",
+    "titleLine2": "survived three.",
+    "timeline": [
+      { "yr": "2020", "what": "Global pandemic", "result": "Shelves stayed full. #8 resilience globally." },
+      { "yr": "2024", "what": "Worst floods ever recorded", "result": "Two years of rain in one day. Zero mass casualties." },
+      { "yr": "2026", "what": "137 ballistic missiles", "result": "96% shot down. President went to the mall." }
+    ]
+  },
+  "finance": {
+    "label": "FINANCIAL RESERVES",
+    "headline": "Imagine earning $100K a year — with $300K in the bank and zero debt.",
+    "sub": "That's the UAE. Most countries owe more than they earn. The UAE {em}saved{/em} 3x its economy.",
+    "proportion": {
+      "gdp": { "val": "$484B", "label": "GDP — what the country earns in a year" },
+      "swf": { "val": "$1.5T", "label": "Sovereign wealth — what's saved up across three government investment funds" },
+      "swfSources": [
+        { "label": "SWF Institute", "url": "https://www.swfinstitute.org/fund-rankings" }
+      ]
+    },
+    "funds": {
+      "title": "Three funds, three jobs",
+      "items": [
+        {
+          "val": "~$1 Trillion",
+          "name": "Abu Dhabi Investment Authority",
+          "desc": "Owns real estate, stocks, and infrastructure in 30+ countries. Been saving since 1976 — that's 50 years of compounding."
+        },
+        {
+          "val": "$300 Billion",
+          "name": "Mubadala",
+          "desc": "Bets on the future — AI, semiconductors, aerospace, healthcare. Strategic long-term plays across 50 countries."
+        },
+        {
+          "val": "$200 Billion",
+          "name": "ADQ",
+          "desc": "Owns the essentials: airports, seaports, hospitals, food companies, power plants. If it keeps the country running, ADQ probably owns it."
+        }
+      ]
+    },
+    "regional": {
+      "title": "UAE vs its neighbors",
+      "titleSources": [
+        { "label": "IMD Rankings", "url": "https://www.imd.org/centers/wcc/world-competitiveness-center/rankings/" }
+      ],
+      "metrics": [
+        { "name": "Economy not dependent on oil", "bars": [{ "c": "UAE", "w": 100, "v": "75%" }, { "c": "Saudi", "w": 67, "v": "50%" }, { "c": "Qatar", "w": 60, "v": "45%" }, { "c": "Kuwait", "w": 53, "v": "40%" }] },
+        { "name": "How modern is the infrastructure (Smart City Index)", "bars": [{ "c": "UAE", "w": 100, "v": "#4" }, { "c": "Saudi", "w": 6, "v": "#68" }, { "c": "Qatar", "w": 5, "v": "#77" }] },
+        { "name": "Global competitiveness (IMD ranking)", "bars": [{ "c": "UAE", "w": 100, "v": "#5" }, { "c": "Qatar", "w": 25, "v": "#20" }, { "c": "Saudi", "w": 21, "v": "#24" }] }
+      ],
+      "note": "#1 in the Middle East across every major global index."
+    },
+    "oil": {
+      "title": "Oil price safety margin",
+      "titleSources": [
+        { "label": "IMF Article IV", "url": "https://www.imf.org/en/countries/are" }
+      ],
+      "zoneDanger": "$0–60",
+      "zoneSurplus": "+$43 surplus",
+      "breakevenVal": "$60",
+      "breakevenDesc": "breakeven",
+      "currentVal": "$103",
+      "currentDesc": "current price",
+      "note": "Every barrel produces {strong}$43 of pure surplus{/strong}. Oil could crash 40% and the budget would still work."
+    },
+    "trust": {
+      "title": "Can you trust this country with your money?",
+      "intro": "Three independent agencies grade every nation's finances. The UAE scores near-perfect — even during a war:",
+      "ratings": [
+        { "g": "AA", "who": "S&P" },
+        { "g": "Aa2", "who": "Moody's" },
+        { "g": "AA-", "who": "Fitch" }
+      ],
+      "note": "Only about 20 countries on Earth score this high."
+    },
+    "context": "{strong}Context:{/strong} Most of these savings are locked in long-term investments — real estate, infrastructure, company stakes. Converting a skyscraper to cash takes time. And tourism still dips hard during crises: 80,000 hotel cancellations in 48 hours during the March 2026 strikes.",
+    "sources": [
+      { "label": "SWF Institute", "url": "https://www.swfinstitute.org/fund-rankings" },
+      { "label": "IMF — UAE", "url": "https://www.imf.org/en/countries/are" },
+      { "label": "IMD Competitiveness", "url": "https://www.imd.org/centers/wcc/world-competitiveness-center/rankings/" },
+      { "label": "S&P Global Ratings", "url": "https://www.spglobal.com/ratings/" }
+    ]
+  },
+  "food": {
+    "label": "FOOD SECURITY",
+    "headlineLine1": "How do you feed 10 million people",
+    "headlineLine2": "in a country with almost no farmland?",
+    "importStrong": "90% of food is imported",
+    "importSources": [
+      { "label": "FAOSTAT", "url": "https://www.fao.org/faostat/en/" },
+      { "label": "UAE Food Strategy", "url": "https://u.ae/en/about-the-uae/strategies-initiatives-and-awards/strategies-plans-and-visions/environment-and-energy/national-food-security-strategy-2051" }
+    ],
+    "importText": " — but from 6 different regions, with 3–5 backup suppliers per product category. Not all eggs in one basket.",
+    "reserveNumber": "6 months",
+    "reserveText": "of strategic food reserves stockpiled. If every import stopped tomorrow, the country keeps eating for half a year.",
+    "reserveRank": "#1 in the Middle East for food security.",
+    "sourcesTitle": "Six continents feed this country",
+    "sourcesNote": "Hover over the circles to see what comes from where. Each source has 3–5 backup suppliers.",
+    "farmTitle": "They're also growing food in the desert. Literally.",
+    "farms": [
+      { "name": "Bustanica", "desc": " — an indoor farm the size of 4 football fields, growing over 1 million kg of lettuce and herbs per year without soil, using 95% less water than traditional farming." },
+      { "name": "Pure Harvest Smart Farms", "desc": " — builds climate-controlled greenhouses that grow tomatoes and strawberries year-round in 50°C heat. Supplies supermarkets across the Gulf." },
+      { "name": "Food Tech Valley", "desc": " — a government R&D center developing robot-operated farms, soil-free growing, and AI that predicts crop yields. Goal: 30% of fresh produce grown locally by 2030." }
+    ],
+    "context": "{strong}Context:{/strong} Reserves and waste coexist — 3.27 million tons of food wasted per year ($3.5 billion). And if both the Strait of Hormuz and Red Sea close simultaneously, air freight costs 10–20x more than shipping.",
+    "sources": [
+      { "label": "FAOSTAT", "url": "https://www.fao.org/faostat/en/" },
+      { "label": "Global Food Security Index", "url": "https://impact.economist.com/sustainability/project/food-security-index/" },
+      { "label": "UAE Food Strategy 2051", "url": "https://u.ae/en/about-the-uae/strategies-initiatives-and-awards/strategies-plans-and-visions/environment-and-energy/national-food-security-strategy-2051" },
+      { "label": "USDA — UAE Market", "url": "https://www.fas.usda.gov/regions/united-arab-emirates" }
+    ]
+  },
+  "foodMap": {
+    "routes": [
+      { "label": "India & Pakistan", "products": "Rice, spices, fruits" },
+      { "label": "Europe", "products": "Dairy, wheat, processed food" },
+      { "label": "Brazil", "products": "Beef, poultry, sugar" },
+      { "label": "Australia", "products": "Wheat, dairy, livestock" },
+      { "label": "SE Asia", "products": "Edible oils, rice" },
+      { "label": "East Africa", "products": "Vegetables, coffee" }
+    ],
+    "tooltip": "{label} — {pct}%",
+    "popupPct": "{pct}% of imports"
+  },
+  "water": {
+    "label": "WATER SECURITY",
+    "headlineLine1": "In one of the driest places on Earth,",
+    "headlineLine2": "every drop is manufactured.",
+    "tradeoff": {
+      "header": "The less you use, the longer reserves last",
+      "headerSources": [
+        { "label": "UAE Water Strategy 2036", "url": "https://u.ae/en/about-the-uae/strategies-initiatives-and-awards/strategies-plans-and-visions/environment-and-energy/the-uae-water-security-strategy-2036" }
+      ],
+      "rows": [
+        { "use": "550 L/day", "means": "3 bathtubs — normal life", "lasts": "2 days" },
+        { "use": "91 L/day", "means": "Rationing — short showers, no gardens", "lasts": "16 days" },
+        { "use": "30 L/day", "means": "2 buckets — drinking, cooking, that's it", "lasts": "45+ days" }
+      ],
+      "labelUse": "Daily consumption per person",
+      "labelLasts": "How long reserves last",
+      "underground": "Plus: {strong}300 underground wells{/strong} in Abu Dhabi store 26 million m³ of treated water beneath the desert — an additional 90-day backup."
+    },
+    "desal": {
+      "title": "How the UAE makes water from ocean",
+      "step1": "Seawater intake from the Gulf",
+      "step2": "Pushed through membranes at extreme pressure (reverse osmosis) — salt and impurities are filtered out",
+      "step3": "Clean drinking water. Piped to every home, office, and farm.",
+      "plantsHeader": "~70 desalination plants along the coast",
+      "plantsNote": "14% of all desalination on Earth — in a country smaller than South Carolina",
+      "taweelahName": "Taweelah",
+      "taweelahSources": [
+        { "label": "EWEC", "url": "https://www.ewec.ae/" }
+      ],
+      "taweelahTitle": "World's largest reverse osmosis plant",
+      "taweelahStat": "909,200 m³ of clean water per day",
+      "taweelahContext": "That fills an Olympic swimming pool every {strong}2.5 minutes{/strong}. Non-stop."
+    },
+    "wells": {
+      "title": "Underground water reserves",
+      "label": "300 wells across Abu Dhabi (showing 1 dot per 5 wells)",
+      "statVal": "26M m³",
+      "statDesc": "of treated water stored underground — a 90-day emergency supply, banked beneath the desert"
+    },
+    "hassyan": {
+      "val": "$920M",
+      "name": "Hassyan Solar Desal",
+      "desc": "Next-gen: solar-powered desalination. Opening 2027. Clean energy making clean water."
+    },
+    "context": "{strong}Context:{/strong} Groundwater depletes 20x faster than nature replenishes it. Desalination plants sit on the coast — physically vulnerable to attack. And 550 liters per day per person is one of the highest consumption rates on Earth. The infrastructure is impressive. The dependency on it is the risk.",
+    "sources": [
+      { "label": "UAE Water Strategy 2036", "url": "https://u.ae/en/about-the-uae/strategies-initiatives-and-awards/strategies-plans-and-visions/environment-and-energy/the-uae-water-security-strategy-2036" },
+      { "label": "EWEC", "url": "https://www.ewec.ae/" },
+      { "label": "FAO AQUASTAT", "url": "https://www.fao.org/aquastat/en/" },
+      { "label": "Bayanat.ae — Water", "url": "https://data.bayanat.ae/en_GB/group/water" }
+    ]
+  },
+  "waterMap": {
+    "legendDesal": "Desalination plants",
+    "legendWells": "Underground water storage (ASR wells)",
+    "legendPipeline": "ADCOP oil bypass pipeline",
+    "pipelineLabel": "ADCOP Pipeline — 1.5M barrels/day bypassing Hormuz",
+    "plants": [
+      { "name": "Taweelah RO", "capacity": "909,200 m³/day", "note": "World's largest RO plant" },
+      { "name": "Jebel Ali", "capacity": "2,276 MIGD", "note": "DEWA complex" },
+      { "name": "Umm Al Nar", "capacity": "429,000 m³/day", "note": "EWEC hybrid" },
+      { "name": "Fujairah F1/F2", "capacity": "591,000 m³/day", "note": "East coast supply" },
+      { "name": "Hassyan (2027)", "capacity": "Solar-powered RO", "note": "$920M next-gen" },
+      { "name": "Mirfa", "capacity": "140,000 m³/day", "note": "Western region" },
+      { "name": "Shuweihat", "capacity": "454,000 m³/day", "note": "Co-gen plant" },
+      { "name": "Layyah", "capacity": "182,000 m³/day", "note": "Northern supply" }
+    ]
+  },
+  "defense": {
+    "label": "AIR DEFENSE",
+    "headlineLine1": "What happens when 137 missiles",
+    "headlineLine2": "are heading toward your cities?",
+    "simBig": "96%",
+    "simBigSources": [
+      { "label": "MDAA", "url": "https://www.missiledefenseadvocacy.org/international-cooperation/united-arab-emirates/" },
+      { "label": "SIPRI", "url": "https://armstransfers.sipri.org/" }
+    ],
+    "simSub": "interception rate",
+    "missileHeader": "137 ballistic missiles — each dot is one missile",
+    "missileLegendGood": "132 intercepted",
+    "missileLegendBad": "5 got through — 6 killed, 141 injured",
+    "droneLabelPrefix": "",
+    "droneStrong": "195",
+    "droneLabelSuffix": " attack drones destroyed",
+    "comparison": {
+      "title": "How 96% compares",
+      "rows": [
+        { "sys": "UAE (March 2026)", "pct": 96, "color": "#2ECC87" },
+        { "sys": "Israel Iron Dome", "pct": 90, "color": "#5B9FE4" },
+        { "sys": "US Patriot (Gulf War)", "pct": 40, "color": "#E8564A" }
+      ],
+      "note": "Different eras, different threats, different systems — but the gap is telling. The UAE's air defense performed at historically exceptional levels."
+    },
+    "layersTitle": "5 layers from space to rooftop — no gap in coverage",
+    "altMarks": ["150 km", "40 km", "25 km", "15 km", "Ground"],
+    "layers": [
+      { "name": "THAAD", "alt": "150 km", "range": "200 km", "what": "Kills ballistic missiles in space before re-entry", "note": "First nation outside the US to have it", "color": "#5B9FE4" },
+      { "name": "Patriot PAC-3", "alt": "40 km", "range": "70 km", "what": "Intercepts tactical missiles in the upper atmosphere", "note": "9 batteries, 108 launchers", "color": "#2ECC87" },
+      { "name": "Cheongung-II", "alt": "25 km", "range": "40 km", "what": "Medium-range defense ($3.5B deal with South Korea)", "note": "Battle-tested March 2026, >90% effective", "color": "#A77BCA" },
+      { "name": "Pantsir-S1", "alt": "15 km", "range": "20 km", "what": "Short-range point defense — catches what others miss", "note": "~50 units deployed", "color": "#E8564A" },
+      { "name": "Laser & drone killers", "alt": "2 km", "range": "5 km", "what": "SkyKnight + Silent Hunter 30kW laser — last line vs drones", "note": "Made in UAE (EDGE Group)", "color": "#D4A843" }
+    ],
+    "context": "{strong}Context:{/strong} THAAD and Patriot ammunition is American-made — resupply during active conflict depends on a political decision in Washington. The UAE is building domestic capability (EDGE Group: $4.9B revenue, Top 25 globally), but most advanced systems are still imported. Localization is at ~25%; the target is 50%.",
+    "sources": [
+      { "label": "SIPRI Arms Transfers", "url": "https://armstransfers.sipri.org/" },
+      { "label": "SIPRI Military Expenditure", "url": "https://milex.sipri.org/" },
+      { "label": "MDAA — UAE Profile", "url": "https://www.missiledefenseadvocacy.org/international-cooperation/united-arab-emirates/" },
+      { "label": "EDGE Group", "url": "https://edgegroup.ae/" },
+      { "label": "GlobalFirepower", "url": "https://www.globalfirepower.com/country-military-strength-detail.php?country_id=united-arab-emirates" }
+    ]
+  },
+  "proof": {
+    "label": "THE PROOF",
+    "headlineLine1": "If it wasn't safe, why would",
+    "headlineLine2": "9 million foreigners stay?",
+    "expatBig": "88%",
+    "expatSources": [
+      { "label": "UAE Statistics", "url": "https://fcsc.gov.ae/" }
+    ],
+    "expatLabel": "of everyone living in the UAE is a foreigner",
+    "expatP1": "They have passports. They have options. They could leave. Through a pandemic, record floods, and missile strikes — they overwhelmingly chose to stay.",
+    "expatP2": "When 9 million people with exit options choose not to use them, that's not government PR. {strong}That's a verdict.{/strong}",
+    "testsTitle": "Three existential tests, three passes",
+    "tests": [
+      { "yr": "2020", "name": "COVID-19", "key": "Shelves stayed full while borders were closed. First country to run Phase III vaccine trials. Built 19,000 m² of ultra-cold vaccine storage from scratch.", "color": "#2ECC87" },
+      { "yr": "2024", "name": "Record floods", "key": "Two years of average rainfall in a single day. Emergency systems activated within minutes. Digital alerts reached every phone. Zero mass casualties.", "color": "#5B9FE4" },
+      { "yr": "2026", "name": "Missile strike", "key": "137 ballistic missiles fired at UAE cities. 132 intercepted. 195 drones destroyed. Markets recovered in 14 days. GDP forecast held at +5.5%.", "color": "#E8564A" }
+    ],
+    "kicker": "None of this happened by accident. Every system that held during these crises was designed, built, and tested years in advance. The UAE government has spent {strong}hundreds of billions of dollars over three decades{/strong} on resilience infrastructure — not because a crisis was coming, but because they assumed one always is.",
+    "sources": [
+      { "label": "FCSC — UAE Statistics", "url": "https://fcsc.gov.ae/" },
+      { "label": "Bloomberg Resilience", "url": "https://www.bloomberg.com/graphics/covid-resilience-ranking/" },
+      { "label": "NCEMA", "url": "https://www.ncema.gov.ae/en/about-ncema.aspx" },
+      { "label": "HOPE Consortium", "url": "https://hopeconsortium.com/" },
+      { "label": "ITU Cybersecurity Index", "url": "https://www.itu.int/en/ITU-D/Cybersecurity/Pages/global-cybersecurity-index.aspx" }
+    ]
+  },
+  "footer": {
+    "titleLine1": "Not invulnerable.",
+    "titleLine2": "Resilient.",
+    "body": "The UAE didn't dodge every crisis. People died. Markets froze. Floodwater filled highways. But each time, the systems held — not because they're perfect, but because they were designed with redundancy, diversification, and the uncomfortable assumption that the worst will happen.",
+    "sourcesLabel": "Sources:",
+    "sourcesText": " UAE government portals (u.ae, NCEMA) · SIPRI · World Bank · FAOSTAT · GlobalFirepower · Missile Defense Advocacy Alliance · DP World · AD Ports Group · Emirates Group · EDGE Group · SWF Institute · Bloomberg · Reuters",
+    "bar": "UAE National Resilience · 2026"
+  },
+  "common": {
+    "sourcesLabel": "Sources:"
+  }
+}

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { t } from '@/i18n'
 defineProps<{
   items: Array<{ label: string, url: string }>
 }>()
@@ -6,7 +7,7 @@ defineProps<{
 
 <template>
   <div class="sources">
-    <span class="src-label">Sources:</span>
+    <span class="src-label">{{ t('common.sourcesLabel') }}</span>
     <a v-for="s in items" :key="s.url" :href="s.url" target="_blank" rel="noopener">{{ s.label }}</a>
   </div>
 </template>

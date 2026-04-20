@@ -1,9 +1,16 @@
 <script setup lang="ts">
 import { useReveal } from '@/composables/useReveal'
+import { t, tHtml } from '@/i18n'
 import WaterMap from './WaterMap.vue'
 import SourceTip from './SourceTip.vue'
 import Sources from './Sources.vue'
 const { el, revealed } = useReveal()
+
+const tradeoffRowGeo = [
+  { usePct: 100, lastPct: 4, color: '#E8564A' },
+  { usePct: 16.5, lastPct: 36, color: '#D4A843' },
+  { usePct: 5.5, lastPct: 100, color: '#2ECC87' },
+]
 </script>
 
 <template>
@@ -11,25 +18,21 @@ const { el, revealed } = useReveal()
     <div class="water-wrap">
 
       <div class="water-header">
-        <p class="water-label">WATER SECURITY</p>
-        <h2>In one of the driest places on Earth,<br>every drop is manufactured.</h2>
+        <p class="water-label">{{ t('water.label') }}</p>
+        <h2>{{ t('water.headlineLine1') }}<br>{{ t('water.headlineLine2') }}</h2>
       </div>
 
       <!-- UNIFIED: one table — consumption ↔ duration tradeoff -->
       <div class="water-tradeoff">
-        <div class="wt-header">The less you use, the longer reserves last <SourceTip :sources="[{label:'UAE Water Strategy 2036',url:'https://u.ae/en/about-the-uae/strategies-initiatives-and-awards/strategies-plans-and-visions/environment-and-energy/the-uae-water-security-strategy-2036'}]" /></div>
+        <div class="wt-header">{{ t('water.tradeoff.header') }} <SourceTip :sources="t('water.tradeoff.headerSources')" /></div>
         <div class="wt-table">
-          <div class="wt-row" v-for="(r, i) in [
-            { use: '550 L/day', means: '3 bathtubs — normal life', lasts: '2 days', usePct: 100, lastPct: 4, color: '#E8564A' },
-            { use: '91 L/day', means: 'Rationing — short showers, no gardens', lasts: '16 days', usePct: 16.5, lastPct: 36, color: '#D4A843' },
-            { use: '30 L/day', means: '2 buckets — drinking, cooking, that\'s it', lasts: '45+ days', usePct: 5.5, lastPct: 100, color: '#2ECC87' },
-          ]" :key="r.use">
+          <div class="wt-row" v-for="(r, i) in t('water.tradeoff.rows')" :key="r.use">
             <!-- Usage bar -->
             <div class="wtr-use">
               <div class="wtr-bar-bg">
-                <div class="wtr-bar" :style="{ width: revealed ? r.usePct + '%' : '0%', background: r.color + '55', transitionDelay: `${i * 0.15}s` }"></div>
+                <div class="wtr-bar" :style="{ width: revealed ? tradeoffRowGeo[i].usePct + '%' : '0%', background: tradeoffRowGeo[i].color + '55', transitionDelay: `${i * 0.15}s` }"></div>
               </div>
-              <span class="wtr-val" :style="{ color: r.color }">{{ r.use }}</span>
+              <span class="wtr-val" :style="{ color: tradeoffRowGeo[i].color }">{{ r.use }}</span>
             </div>
 
             <!-- What it means -->
@@ -41,83 +44,81 @@ const { el, revealed } = useReveal()
             <!-- Duration bar -->
             <div class="wtr-lasts">
               <div class="wtr-bar-bg">
-                <div class="wtr-bar" :style="{ width: revealed ? r.lastPct + '%' : '0%', background: r.color + '55', transitionDelay: `${0.3 + i * 0.15}s` }"></div>
+                <div class="wtr-bar" :style="{ width: revealed ? tradeoffRowGeo[i].lastPct + '%' : '0%', background: tradeoffRowGeo[i].color + '55', transitionDelay: `${0.3 + i * 0.15}s` }"></div>
               </div>
-              <span class="wtr-val" :style="{ color: r.color }">{{ r.lasts }}</span>
+              <span class="wtr-val" :style="{ color: tradeoffRowGeo[i].color }">{{ r.lasts }}</span>
             </div>
           </div>
 
           <!-- Column labels -->
           <div class="wt-labels">
-            <span>Daily consumption per person</span>
+            <span>{{ t('water.tradeoff.labelUse') }}</span>
             <span></span>
             <span></span>
-            <span>How long reserves last</span>
+            <span>{{ t('water.tradeoff.labelLasts') }}</span>
           </div>
         </div>
 
-        <div class="wt-underground">
-          Plus: <strong>300 underground wells</strong> in Abu Dhabi store 26 million m³ of treated water beneath the desert — an additional 90-day backup.
-        </div>
+        <div class="wt-underground" v-html="tHtml('water.tradeoff.underground')"></div>
       </div>
 
       <!-- Desal + infrastructure -->
       <div class="water-grid">
         <div class="water-left">
-          <h3>How the UAE makes water from ocean</h3>
+          <h3>{{ t('water.desal.title') }}</h3>
           <div class="desal-flow">
             <div class="df-step">
               <div class="df-icon">🌊</div>
-              <div class="df-text">Seawater intake from the Gulf</div>
+              <div class="df-text">{{ t('water.desal.step1') }}</div>
             </div>
             <div class="df-arrow">→</div>
             <div class="df-step">
               <div class="df-icon">⚙</div>
-              <div class="df-text">Pushed through membranes at extreme pressure (reverse osmosis) — salt and impurities are filtered out</div>
+              <div class="df-text">{{ t('water.desal.step2') }}</div>
             </div>
             <div class="df-arrow">→</div>
             <div class="df-step">
               <div class="df-icon">💧</div>
-              <div class="df-text">Clean drinking water. Piped to every home, office, and farm.</div>
+              <div class="df-text">{{ t('water.desal.step3') }}</div>
             </div>
           </div>
 
           <!-- 70 plants as dot grid -->
           <div class="plants-viz">
-            <div class="pv-header">~70 desalination plants along the coast</div>
+            <div class="pv-header">{{ t('water.desal.plantsHeader') }}</div>
             <div class="pv-dots">
               <div v-for="i in 70" :key="i" class="pv-dot" :style="{ animationDelay: `${i * 20}ms` }"></div>
             </div>
-            <div class="pv-note">14% of all desalination on Earth — in a country smaller than South Carolina</div>
+            <div class="pv-note">{{ t('water.desal.plantsNote') }}</div>
           </div>
 
           <!-- Taweelah -->
           <div class="taweelah">
-            <div class="tw-name">Taweelah <SourceTip :sources="[{label:'EWEC',url:'https://www.ewec.ae/'}]" /></div>
-            <div class="tw-title">World's largest reverse osmosis plant</div>
-            <div class="tw-stat">909,200 m³ of clean water per day</div>
-            <div class="tw-context">That fills an Olympic swimming pool every <strong>2.5 minutes</strong>. Non-stop.</div>
+            <div class="tw-name">{{ t('water.desal.taweelahName') }} <SourceTip :sources="t('water.desal.taweelahSources')" /></div>
+            <div class="tw-title">{{ t('water.desal.taweelahTitle') }}</div>
+            <div class="tw-stat">{{ t('water.desal.taweelahStat') }}</div>
+            <div class="tw-context" v-html="tHtml('water.desal.taweelahContext')"></div>
           </div>
         </div>
 
         <div class="water-right">
           <!-- 300 wells as dot grid -->
-          <h3>Underground water reserves</h3>
+          <h3>{{ t('water.wells.title') }}</h3>
           <div class="wells-viz">
             <div class="wv-dots">
               <div v-for="i in 60" :key="i" class="wv-dot" :style="{ animationDelay: `${i * 15}ms` }"></div>
             </div>
-            <div class="wv-label">300 wells across Abu Dhabi (showing 1 dot per 5 wells)</div>
+            <div class="wv-label">{{ t('water.wells.label') }}</div>
             <div class="wv-stat">
-              <span class="wvs-val">26M m³</span>
-              <span class="wvs-desc">of treated water stored underground — a 90-day emergency supply, banked beneath the desert</span>
+              <span class="wvs-val">{{ t('water.wells.statVal') }}</span>
+              <span class="wvs-desc">{{ t('water.wells.statDesc') }}</span>
             </div>
           </div>
 
           <div class="hassyan">
-            <div class="hs-val">$920M</div>
-            <div class="hs-name">Hassyan Solar Desal</div>
-            <div class="hs-desc">Next-gen: solar-powered desalination. Opening 2027. Clean energy making clean water.</div>
+            <div class="hs-val">{{ t('water.hassyan.val') }}</div>
+            <div class="hs-name">{{ t('water.hassyan.name') }}</div>
+            <div class="hs-desc">{{ t('water.hassyan.desc') }}</div>
           </div>
         </div>
       </div>
@@ -125,16 +126,9 @@ const { el, revealed } = useReveal()
       <!-- Infrastructure map -->
       <WaterMap />
 
-      <div class="water-context">
-        <strong>Context:</strong> Groundwater depletes 20x faster than nature replenishes it. Desalination plants sit on the coast — physically vulnerable to attack. And 550 liters per day per person is one of the highest consumption rates on Earth. The infrastructure is impressive. The dependency on it is the risk.
-      </div>
+      <div class="water-context" v-html="tHtml('water.context')"></div>
 
-      <Sources :items="[
-        { label: 'UAE Water Strategy 2036', url: 'https://u.ae/en/about-the-uae/strategies-initiatives-and-awards/strategies-plans-and-visions/environment-and-energy/the-uae-water-security-strategy-2036' },
-        { label: 'EWEC', url: 'https://www.ewec.ae/' },
-        { label: 'FAO AQUASTAT', url: 'https://www.fao.org/aquastat/en/' },
-        { label: 'Bayanat.ae — Water', url: 'https://data.bayanat.ae/en_GB/group/water' },
-      ]" />
+      <Sources :items="t('water.sources')" />
     </div>
   </section>
 </template>

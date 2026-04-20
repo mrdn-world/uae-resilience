@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useReveal } from '@/composables/useReveal'
+import { t, tHtml } from '@/i18n'
 import SourceTip from './SourceTip.vue'
 import Sources from './Sources.vue'
 const { el, revealed } = useReveal()
@@ -11,48 +12,32 @@ const { el, revealed } = useReveal()
 
       <!-- HERO VIZ: proportional bar — GDP vs SWF -->
       <div class="fin-header">
-        <p class="fin-label">FINANCIAL RESERVES</p>
-        <h2>Imagine earning $100K a year — with $300K in the bank and zero debt.</h2>
-        <p class="fin-sub">That's the UAE. Most countries owe more than they earn. The UAE <em>saved</em> 3x its economy.</p>
+        <p class="fin-label">{{ t('finance.label') }}</p>
+        <h2>{{ t('finance.headline') }}</h2>
+        <p class="fin-sub" v-html="tHtml('finance.sub')"></p>
       </div>
 
       <div class="proportion-bar">
         <div class="pb-segment gdp" :style="{ flex: revealed ? 1 : 0 }">
-          <span class="pb-val">$484B</span>
-          <span class="pb-lbl">GDP — what the country earns in a year</span>
+          <span class="pb-val">{{ t('finance.proportion.gdp.val') }}</span>
+          <span class="pb-lbl">{{ t('finance.proportion.gdp.label') }}</span>
         </div>
         <div class="pb-segment swf" :style="{ flex: revealed ? 3 : 0 }">
-          <span class="pb-val">$1.5T</span><SourceTip :sources="[{label:'SWF Institute',url:'https://www.swfinstitute.org/fund-rankings'}]" />
-          <span class="pb-lbl">Sovereign wealth — what's saved up across three government investment funds</span>
+          <span class="pb-val">{{ t('finance.proportion.swf.val') }}</span><SourceTip :sources="t('finance.proportion.swfSources')" />
+          <span class="pb-lbl">{{ t('finance.proportion.swf.label') }}</span>
         </div>
       </div>
 
       <div class="fin-grid">
         <!-- LEFT: The three funds -->
         <div class="funds">
-          <h3>Three funds, three jobs</h3>
-          <div class="fund">
-            <div class="fund-bar" :style="{ width: revealed ? '100%' : '0' }"></div>
+          <h3>{{ t('finance.funds.title') }}</h3>
+          <div class="fund" v-for="(f, i) in t('finance.funds.items')" :key="f.name">
+            <div class="fund-bar" :class="{ med: i === 1, sm: i === 2 }" :style="{ width: revealed ? (i === 0 ? '100%' : i === 1 ? '30%' : '20%') : '0' }"></div>
             <div class="fund-info">
-              <span class="fund-val">~$1 Trillion</span>
-              <span class="fund-name">Abu Dhabi Investment Authority</span>
-              <span class="fund-desc">Owns real estate, stocks, and infrastructure in 30+ countries. Been saving since 1976 — that's 50 years of compounding.</span>
-            </div>
-          </div>
-          <div class="fund">
-            <div class="fund-bar med" :style="{ width: revealed ? '30%' : '0' }"></div>
-            <div class="fund-info">
-              <span class="fund-val">$300 Billion</span>
-              <span class="fund-name">Mubadala</span>
-              <span class="fund-desc">Bets on the future — AI, semiconductors, aerospace, healthcare. Strategic long-term plays across 50 countries.</span>
-            </div>
-          </div>
-          <div class="fund">
-            <div class="fund-bar sm" :style="{ width: revealed ? '20%' : '0' }"></div>
-            <div class="fund-info">
-              <span class="fund-val">$200 Billion</span>
-              <span class="fund-name">ADQ</span>
-              <span class="fund-desc">Owns the essentials: airports, seaports, hospitals, food companies, power plants. If it keeps the country running, ADQ probably owns it.</span>
+              <span class="fund-val">{{ f.val }}</span>
+              <span class="fund-name">{{ f.name }}</span>
+              <span class="fund-desc">{{ f.desc }}</span>
             </div>
           </div>
         </div>
@@ -61,13 +46,9 @@ const { el, revealed } = useReveal()
         <div class="fin-right">
           <!-- Regional comparison — multi-bar -->
           <div class="regional">
-            <h3>UAE vs its neighbors <SourceTip :sources="[{label:'IMD Rankings',url:'https://www.imd.org/centers/wcc/world-competitiveness-center/rankings/'}]" /></h3>
+            <h3>{{ t('finance.regional.title') }} <SourceTip :sources="t('finance.regional.titleSources')" /></h3>
             <div class="reg-metrics">
-              <div class="reg-metric" v-for="m in [
-                { name: 'Economy not dependent on oil', bars: [{ c: 'UAE', w: 100, v: '75%' }, { c: 'Saudi', w: 67, v: '50%' }, { c: 'Qatar', w: 60, v: '45%' }, { c: 'Kuwait', w: 53, v: '40%' }] },
-                { name: 'How modern is the infrastructure (Smart City Index)', bars: [{ c: 'UAE', w: 100, v: '#4' }, { c: 'Saudi', w: 6, v: '#68' }, { c: 'Qatar', w: 5, v: '#77' }] },
-                { name: 'Global competitiveness (IMD ranking)', bars: [{ c: 'UAE', w: 100, v: '#5' }, { c: 'Qatar', w: 25, v: '#20' }, { c: 'Saudi', w: 21, v: '#24' }] },
-              ]" :key="m.name">
+              <div class="reg-metric" v-for="m in t('finance.regional.metrics')" :key="m.name">
                 <div class="rm-name">{{ m.name }}</div>
                 <div class="rm-bars">
                   <div v-for="(b, i) in m.bars" :key="b.c" class="rm-bar-row">
@@ -80,63 +61,54 @@ const { el, revealed } = useReveal()
                 </div>
               </div>
             </div>
-            <p class="reg-note">#1 in the Middle East across every major global index.</p>
+            <p class="reg-note">{{ t('finance.regional.note') }}</p>
           </div>
 
           <!-- Oil price gauge — single bar with zones -->
           <div class="oil-gauge">
-            <h3>Oil price safety margin <SourceTip :sources="[{label:'IMF Article IV',url:'https://www.imf.org/en/countries/are'}]" /></h3>
+            <h3>{{ t('finance.oil.title') }} <SourceTip :sources="t('finance.oil.titleSources')" /></h3>
             <div class="og-bar">
               <div class="og-zone danger" :style="{ width: revealed ? '46%' : '0%' }">
-                <span class="og-label">$0–60</span>
+                <span class="og-label">{{ t('finance.oil.zoneDanger') }}</span>
               </div>
               <div class="og-zone surplus" :style="{ width: revealed ? '33%' : '0%' }">
-                <span class="og-label">+$43 surplus</span>
+                <span class="og-label">{{ t('finance.oil.zoneSurplus') }}</span>
               </div>
               <div class="og-zone headroom" :style="{ width: revealed ? '21%' : '0%' }"></div>
             </div>
             <div class="og-markers">
               <div class="og-mark" style="left: 46%">
                 <span class="og-mark-line"></span>
-                <span class="og-mark-val">$60</span>
-                <span class="og-mark-desc">breakeven</span>
+                <span class="og-mark-val">{{ t('finance.oil.breakevenVal') }}</span>
+                <span class="og-mark-desc">{{ t('finance.oil.breakevenDesc') }}</span>
               </div>
               <div class="og-mark" style="left: 79%">
                 <span class="og-mark-line"></span>
-                <span class="og-mark-val">$103</span>
-                <span class="og-mark-desc">current price</span>
+                <span class="og-mark-val">{{ t('finance.oil.currentVal') }}</span>
+                <span class="og-mark-desc">{{ t('finance.oil.currentDesc') }}</span>
               </div>
             </div>
-            <p class="og-note">Every barrel produces <strong>$43 of pure surplus</strong>. Oil could crash 40% and the budget would still work.</p>
+            <p class="og-note" v-html="tHtml('finance.oil.note')"></p>
           </div>
 
           <!-- Trust score -->
           <div class="trust">
-            <h3>Can you trust this country with your money?</h3>
-            <p>Three independent agencies grade every nation's finances. The UAE scores near-perfect — even during a war:</p>
+            <h3>{{ t('finance.trust.title') }}</h3>
+            <p>{{ t('finance.trust.intro') }}</p>
             <div class="trust-row">
-              <div class="trust-badge" v-for="r in [
-                { g: 'AA', who: 'S&P' }, { g: 'Aa2', who: 'Moody\'s' }, { g: 'AA-', who: 'Fitch' }
-              ]" :key="r.who">
+              <div class="trust-badge" v-for="r in t('finance.trust.ratings')" :key="r.who">
                 <span class="tb-grade">{{ r.g }}</span>
                 <span class="tb-who">{{ r.who }}</span>
               </div>
             </div>
-            <p class="trust-note">Only about 20 countries on Earth score this high.</p>
+            <p class="trust-note">{{ t('finance.trust.note') }}</p>
           </div>
         </div>
       </div>
 
-      <div class="fin-context">
-        <strong>Context:</strong> Most of these savings are locked in long-term investments — real estate, infrastructure, company stakes. Converting a skyscraper to cash takes time. And tourism still dips hard during crises: 80,000 hotel cancellations in 48 hours during the March 2026 strikes.
-      </div>
+      <div class="fin-context" v-html="tHtml('finance.context')"></div>
 
-      <Sources :items="[
-        { label: 'SWF Institute', url: 'https://www.swfinstitute.org/fund-rankings' },
-        { label: 'IMF — UAE', url: 'https://www.imf.org/en/countries/are' },
-        { label: 'IMD Competitiveness', url: 'https://www.imd.org/centers/wcc/world-competitiveness-center/rankings/' },
-        { label: 'S&P Global Ratings', url: 'https://www.spglobal.com/ratings/' },
-      ]" />
+      <Sources :items="t('finance.sources')" />
     </div>
   </section>
 </template>

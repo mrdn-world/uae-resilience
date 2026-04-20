@@ -1,18 +1,10 @@
 <script setup lang="ts">
 import { useReveal } from '@/composables/useReveal'
+import { t, tHtml } from '@/i18n'
 import FoodMap from './FoodMap.vue'
 import SourceTip from './SourceTip.vue'
 import Sources from './Sources.vue'
 const { el, revealed } = useReveal()
-
-const sources = [
-  { from: 'India & Pakistan', what: 'Rice, spices, fruits', pct: 22 },
-  { from: 'Europe', what: 'Dairy, wheat, processed food', pct: 18 },
-  { from: 'Brazil & S. America', what: 'Beef, poultry, sugar', pct: 16 },
-  { from: 'Australia', what: 'Wheat, dairy, livestock', pct: 12 },
-  { from: 'SE Asia', what: 'Edible oils, rice', pct: 11 },
-  { from: 'East Africa', what: 'Vegetables, coffee', pct: 8 },
-]
 </script>
 
 <template>
@@ -20,8 +12,8 @@ const sources = [
     <div class="food-wrap">
 
       <div class="food-header">
-        <p class="food-label">FOOD SECURITY</p>
-        <h2>How do you feed 10 million people<br>in a country with almost no farmland?</h2>
+        <p class="food-label">{{ t('food.label') }}</p>
+        <h2>{{ t('food.headlineLine1') }}<br>{{ t('food.headlineLine2') }}</h2>
       </div>
 
       <!-- Key facts: compact, side by side -->
@@ -32,54 +24,38 @@ const sources = [
               :style="{ transitionDelay: revealed ? `${i * 5}ms` : '0ms' }"></div>
           </div>
           <div class="fi-text">
-            <strong>90% of food is imported</strong><SourceTip :sources="[{label:'FAOSTAT',url:'https://www.fao.org/faostat/en/'},{label:'UAE Food Strategy',url:'https://u.ae/en/about-the-uae/strategies-initiatives-and-awards/strategies-plans-and-visions/environment-and-energy/national-food-security-strategy-2051'}]" /> — but from 6 different regions,
-            with 3–5 backup suppliers per product category.
-            Not all eggs in one basket.
+            <strong>{{ t('food.importStrong') }}</strong><SourceTip :sources="t('food.importSources')" />{{ t('food.importText') }}
           </div>
         </div>
         <div class="fact-reserve">
-          <div class="fr-number">6 months</div>
+          <div class="fr-number">{{ t('food.reserveNumber') }}</div>
           <div class="fr-text">
-            of strategic food reserves stockpiled. If every import stopped tomorrow,
-            the country keeps eating for half a year.
-            <span class="fr-rank">#1 in the Middle East for food security.</span>
+            {{ t('food.reserveText') }}
+            <span class="fr-rank">{{ t('food.reserveRank') }}</span>
           </div>
         </div>
       </div>
 
       <!-- Import map with integrated legend -->
       <div class="sources-block">
-        <h3>Six continents feed this country</h3>
+        <h3>{{ t('food.sourcesTitle') }}</h3>
         <FoodMap />
-        <p class="sources-note">Hover over the circles to see what comes from where. Each source has 3–5 backup suppliers.</p>
+        <p class="sources-note">{{ t('food.sourcesNote') }}</p>
       </div>
 
       <!-- Desert farming — not cards, inline descriptions -->
       <div class="farm-block">
-        <h3>They're also growing food in the desert. Literally.</h3>
+        <h3>{{ t('food.farmTitle') }}</h3>
         <div class="farm-items">
-          <div class="farm-item">
-            <span class="fi-name">Bustanica</span> — an indoor farm the size of 4 football fields, growing over 1 million kg of lettuce and herbs per year without soil, using 95% less water than traditional farming.
-          </div>
-          <div class="farm-item">
-            <span class="fi-name">Pure Harvest Smart Farms</span> — builds climate-controlled greenhouses that grow tomatoes and strawberries year-round in 50°C heat. Supplies supermarkets across the Gulf.
-          </div>
-          <div class="farm-item">
-            <span class="fi-name">Food Tech Valley</span> — a government R&D center developing robot-operated farms, soil-free growing, and AI that predicts crop yields. Goal: 30% of fresh produce grown locally by 2030.
+          <div class="farm-item" v-for="f in t('food.farms')" :key="f.name">
+            <span class="fi-name">{{ f.name }}</span>{{ f.desc }}
           </div>
         </div>
       </div>
 
-      <div class="food-context">
-        <strong>Context:</strong> Reserves and waste coexist — 3.27 million tons of food wasted per year ($3.5 billion). And if both the Strait of Hormuz and Red Sea close simultaneously, air freight costs 10–20x more than shipping.
-      </div>
+      <div class="food-context" v-html="tHtml('food.context')"></div>
 
-      <Sources :items="[
-        { label: 'FAOSTAT', url: 'https://www.fao.org/faostat/en/' },
-        { label: 'Global Food Security Index', url: 'https://impact.economist.com/sustainability/project/food-security-index/' },
-        { label: 'UAE Food Strategy 2051', url: 'https://u.ae/en/about-the-uae/strategies-initiatives-and-awards/strategies-plans-and-visions/environment-and-energy/national-food-security-strategy-2051' },
-        { label: 'USDA — UAE Market', url: 'https://www.fas.usda.gov/regions/united-arab-emirates' },
-      ]" />
+      <Sources :items="t('food.sources')" />
     </div>
   </section>
 </template>

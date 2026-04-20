@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import { t } from '@/i18n'
 const show = ref(false)
 onMounted(() => requestAnimationFrame(() => show.value = true))
 </script>
@@ -7,20 +8,16 @@ onMounted(() => requestAnimationFrame(() => show.value = true))
 <template>
   <section class="hero" :class="{ show }">
     <div class="hero-inner">
-      <p class="hero-kicker">While other countries plan for crises,</p>
-      <h1 class="hero-title">the UAE already<br>survived three.</h1>
+      <p class="hero-kicker">{{ t('hero.kicker') }}</p>
+      <h1 class="hero-title">{{ t('hero.titleLine1') }}<br>{{ t('hero.titleLine2') }}</h1>
 
       <div class="hero-timeline">
         <div class="tl-line"></div>
-        <div class="tl-node" v-for="(t, i) in [
-          { yr: '2020', what: 'Global pandemic', result: 'Shelves stayed full. #8 resilience globally.' },
-          { yr: '2024', what: 'Worst floods ever recorded', result: 'Two years of rain in one day. Zero mass casualties.' },
-          { yr: '2026', what: '137 ballistic missiles', result: '96% shot down. President went to the mall.' },
-        ]" :key="t.yr" :style="{ transitionDelay: `${0.6 + i * 0.2}s` }">
+        <div class="tl-node" v-for="(node, i) in t('hero.timeline')" :key="node.yr" :style="{ transitionDelay: `${0.6 + i * 0.2}s` }">
           <div class="tl-dot"></div>
-          <div class="tl-yr">{{ t.yr }}</div>
-          <div class="tl-what">{{ t.what }}</div>
-          <div class="tl-result">{{ t.result }}</div>
+          <div class="tl-yr">{{ node.yr }}</div>
+          <div class="tl-what">{{ node.what }}</div>
+          <div class="tl-result">{{ node.result }}</div>
         </div>
       </div>
     </div>

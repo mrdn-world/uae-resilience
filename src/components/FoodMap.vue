@@ -2,17 +2,20 @@
 import { ref, onMounted } from 'vue'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
+import { t } from '@/i18n'
 
 const mapEl = ref<HTMLElement | null>(null)
 
-const routes = [
-  { from: [20.5, 78.9], label: 'India & Pakistan', products: 'Rice, spices, fruits', pct: 22, color: '#D4A843' },
-  { from: [48.8, 2.3], label: 'Europe', products: 'Dairy, wheat, processed food', pct: 18, color: '#5B9FE4' },
-  { from: [-15.8, -47.9], label: 'Brazil', products: 'Beef, poultry, sugar', pct: 16, color: '#E8564A' },
-  { from: [-25.3, 133.8], label: 'Australia', products: 'Wheat, dairy, livestock', pct: 12, color: '#2ECC87' },
-  { from: [1.3, 103.8], label: 'SE Asia', products: 'Edible oils, rice', pct: 11, color: '#A77BCA' },
-  { from: [-1.3, 36.8], label: 'East Africa', products: 'Vegetables, coffee', pct: 8, color: '#8A8372' },
+const routeGeo = [
+  { from: [20.5, 78.9] as [number, number], pct: 22, color: '#D4A843' },
+  { from: [48.8, 2.3] as [number, number], pct: 18, color: '#5B9FE4' },
+  { from: [-15.8, -47.9] as [number, number], pct: 16, color: '#E8564A' },
+  { from: [-25.3, 133.8] as [number, number], pct: 12, color: '#2ECC87' },
+  { from: [1.3, 103.8] as [number, number], pct: 11, color: '#A77BCA' },
+  { from: [-1.3, 36.8] as [number, number], pct: 8, color: '#8A8372' },
 ]
+const routeTexts = t('foodMap.routes') as Array<{ label: string, products: string }>
+const routes = routeGeo.map((g, i) => ({ ...g, label: routeTexts[i].label, products: routeTexts[i].products }))
 
 const uae: [number, number] = [24.4, 54.5]
 
@@ -87,7 +90,7 @@ onMounted(() => {
       color: r.color,
       weight: 2,
       opacity: 0.3,
-    }).bindTooltip(`${r.label} — ${r.pct}%`, {
+    }).bindTooltip(t('foodMap.tooltip', { label: r.label, pct: r.pct }), {
       permanent: !isMobile,
       direction: 'top',
       className: 'route-label',
@@ -95,7 +98,7 @@ onMounted(() => {
     }).bindPopup(`
       <div style="font-family: Inter, system-ui; min-width: 140px;">
         <div style="font-size: 14px; font-weight: 800;">${r.label}</div>
-        <div style="font-size: 13px; color: ${r.color}; font-weight: 700;">${r.pct}% of imports</div>
+        <div style="font-size: 13px; color: ${r.color}; font-weight: 700;">${t('foodMap.popupPct', { pct: r.pct })}</div>
         <div style="font-size: 12px; color: #999;">${r.products}</div>
       </div>
     `, { className: 'route-popup' }).addTo(map)

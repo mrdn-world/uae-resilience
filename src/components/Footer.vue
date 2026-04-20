@@ -1,21 +1,16 @@
 <script setup lang="ts">
+import { t } from '@/i18n'
 </script>
 
 <template>
   <footer class="footer">
     <div class="footer-inner">
-      <h2>Not invulnerable.<br>Resilient.</h2>
-      <p>
-        The UAE didn't dodge every crisis. People died. Markets froze. Floodwater filled highways.
-        But each time, the systems held — not because they're perfect, but because they were designed
-        with redundancy, diversification, and the uncomfortable assumption that the worst will happen.
-      </p>
+      <h2>{{ t('footer.titleLine1') }}<br>{{ t('footer.titleLine2') }}</h2>
+      <p>{{ t('footer.body') }}</p>
       <div class="footer-sources">
-        <strong>Sources:</strong> UAE government portals (u.ae, NCEMA) · SIPRI · World Bank · FAOSTAT · GlobalFirepower ·
-        Missile Defense Advocacy Alliance · DP World · AD Ports Group · Emirates Group · EDGE Group ·
-        SWF Institute · Bloomberg · Reuters
+        <strong>{{ t('footer.sourcesLabel') }}</strong>{{ t('footer.sourcesText') }}
       </div>
-      <div class="footer-bar">UAE National Resilience · 2026</div>
+      <div class="footer-bar">{{ t('footer.bar') }}</div>
     </div>
   </footer>
 </template>

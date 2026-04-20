@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useReveal } from '@/composables/useReveal'
+import { t, tHtml } from '@/i18n'
 import SourceTip from './SourceTip.vue'
 import Sources from './Sources.vue'
 const { el, revealed } = useReveal()
@@ -10,8 +11,8 @@ const { el, revealed } = useReveal()
     <div class="proof-wrap">
 
       <div class="proof-header">
-        <p class="proof-label">THE PROOF</p>
-        <h2>If it wasn't safe, why would<br>9 million foreigners stay?</h2>
+        <p class="proof-label">{{ t('proof.label') }}</p>
+        <h2>{{ t('proof.headlineLine1') }}<br>{{ t('proof.headlineLine2') }}</h2>
       </div>
 
       <!-- Waffle: 100 people, 88 are expats -->
@@ -32,40 +33,28 @@ const { el, revealed } = useReveal()
         </div>
 
         <div class="expat-text">
-          <div class="et-big">88%<SourceTip :sources="[{label:'UAE Statistics',url:'https://fcsc.gov.ae/'}]" /></div>
-          <div class="et-label">of everyone living in the UAE is a foreigner</div>
-          <p>They have passports. They have options. They could leave. Through a pandemic, record floods, and missile strikes — they overwhelmingly chose to stay.</p>
-          <p>When 9 million people with exit options choose not to use them, that's not government PR. <strong>That's a verdict.</strong></p>
+          <div class="et-big">{{ t('proof.expatBig') }}<SourceTip :sources="t('proof.expatSources')" /></div>
+          <div class="et-label">{{ t('proof.expatLabel') }}</div>
+          <p>{{ t('proof.expatP1') }}</p>
+          <p v-html="tHtml('proof.expatP2')"></p>
         </div>
       </div>
 
       <!-- Three tests — compact, no grids of numbers -->
       <div class="tests">
-        <h3>Three existential tests, three passes</h3>
-        <div class="test" v-for="t in [
-          { yr: '2020', name: 'COVID-19', key: 'Shelves stayed full while borders were closed. First country to run Phase III vaccine trials. Built 19,000 m² of ultra-cold vaccine storage from scratch.', color: '#2ECC87' },
-          { yr: '2024', name: 'Record floods', key: 'Two years of average rainfall in a single day. Emergency systems activated within minutes. Digital alerts reached every phone. Zero mass casualties.', color: '#5B9FE4' },
-          { yr: '2026', name: 'Missile strike', key: '137 ballistic missiles fired at UAE cities. 132 intercepted. 195 drones destroyed. Markets recovered in 14 days. GDP forecast held at +5.5%.', color: '#E8564A' },
-        ]" :key="t.yr" :style="{ borderLeftColor: t.color }">
+        <h3>{{ t('proof.testsTitle') }}</h3>
+        <div class="test" v-for="test in t('proof.tests')" :key="test.yr" :style="{ borderLeftColor: test.color }">
           <div class="test-head">
-            <span class="test-yr" :style="{ color: t.color }">{{ t.yr }}</span>
-            <span class="test-name">{{ t.name }}</span>
+            <span class="test-yr" :style="{ color: test.color }">{{ test.yr }}</span>
+            <span class="test-name">{{ test.name }}</span>
           </div>
-          <p class="test-key">{{ t.key }}</p>
+          <p class="test-key">{{ test.key }}</p>
         </div>
       </div>
 
-      <div class="proof-kicker">
-        None of this happened by accident. Every system that held during these crises was designed, built, and tested years in advance. The UAE government has spent <strong>hundreds of billions of dollars over three decades</strong> on resilience infrastructure — not because a crisis was coming, but because they assumed one always is.
-      </div>
+      <div class="proof-kicker" v-html="tHtml('proof.kicker')"></div>
 
-      <Sources :items="[
-        { label: 'FCSC — UAE Statistics', url: 'https://fcsc.gov.ae/' },
-        { label: 'Bloomberg Resilience', url: 'https://www.bloomberg.com/graphics/covid-resilience-ranking/' },
-        { label: 'NCEMA', url: 'https://www.ncema.gov.ae/en/about-ncema.aspx' },
-        { label: 'HOPE Consortium', url: 'https://hopeconsortium.com/' },
-        { label: 'ITU Cybersecurity Index', url: 'https://www.itu.int/en/ITU-D/Cybersecurity/Pages/global-cybersecurity-index.aspx' },
-      ]" />
+      <Sources :items="t('proof.sources')" />
     </div>
   </section>
 </template>

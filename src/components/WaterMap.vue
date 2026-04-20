@@ -2,19 +2,22 @@
 import { ref, onMounted } from 'vue'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
+import { t } from '@/i18n'
 
 const mapEl = ref<HTMLElement | null>(null)
 
-const desalPlants = [
-  { name: 'Taweelah RO', pos: [24.585, 54.633] as [number, number], capacity: '909,200 m³/day', note: "World's largest RO plant", big: true },
-  { name: 'Jebel Ali', pos: [25.02, 55.03] as [number, number], capacity: '2,276 MIGD', note: 'DEWA complex' },
-  { name: 'Umm Al Nar', pos: [24.44, 54.55] as [number, number], capacity: '429,000 m³/day', note: 'EWEC hybrid' },
-  { name: 'Fujairah F1/F2', pos: [25.12, 56.30] as [number, number], capacity: '591,000 m³/day', note: 'East coast supply' },
-  { name: 'Hassyan (2027)', pos: [24.97, 55.08] as [number, number], capacity: 'Solar-powered RO', note: '$920M next-gen', big: true },
-  { name: 'Mirfa', pos: [24.10, 53.37] as [number, number], capacity: '140,000 m³/day', note: 'Western region' },
-  { name: 'Shuweihat', pos: [24.15, 52.63] as [number, number], capacity: '454,000 m³/day', note: 'Co-gen plant' },
-  { name: 'Layyah', pos: [25.38, 55.53] as [number, number], capacity: '182,000 m³/day', note: 'Northern supply' },
+const plantGeo = [
+  { pos: [24.585, 54.633] as [number, number], big: true },
+  { pos: [25.02, 55.03] as [number, number], big: false },
+  { pos: [24.44, 54.55] as [number, number], big: false },
+  { pos: [25.12, 56.30] as [number, number], big: false },
+  { pos: [24.97, 55.08] as [number, number], big: true },
+  { pos: [24.10, 53.37] as [number, number], big: false },
+  { pos: [24.15, 52.63] as [number, number], big: false },
+  { pos: [25.38, 55.53] as [number, number], big: false },
 ]
+const plantTexts = t('waterMap.plants') as Array<{ name: string, capacity: string, note: string }>
+const desalPlants = plantGeo.map((g, i) => ({ ...g, ...plantTexts[i] }))
 
 const asrWells = [
   [24.30, 54.20], [24.35, 54.40], [24.25, 54.60], [24.40, 54.10],
@@ -61,7 +64,7 @@ onMounted(() => {
     color: '#D4A843',
     weight: 3,
     opacity: 0.6,
-  }).bindTooltip('ADCOP Pipeline — 1.5M barrels/day bypassing Hormuz', {
+  }).bindTooltip(t('waterMap.pipelineLabel'), {
     direction: 'top',
     className: 'pipe-label',
   }).addTo(map)
@@ -69,11 +72,11 @@ onMounted(() => {
   // Desal plants
   desalPlants.forEach((p) => {
     const marker = L.circleMarker(p.pos, {
-      radius: (p as any).big ? 8 : 5,
+      radius: p.big ? 8 : 5,
       fillColor: '#5B9FE4',
       fillOpacity: 0.8,
       color: '#5B9FE4',
-      weight: (p as any).big ? 6 : 3,
+      weight: p.big ? 6 : 3,
       opacity: 0.2,
     })
 
@@ -93,9 +96,9 @@ onMounted(() => {
 <template>
   <div class="water-map-wrap">
     <div class="wm-header">
-      <span class="wm-legend-item"><span class="wm-dot" style="background: #5B9FE4"></span>Desalination plants</span>
-      <span class="wm-legend-item"><span class="wm-dot" style="background: #2ECC87"></span>Underground water storage (ASR wells)</span>
-      <span class="wm-legend-item"><span class="wm-line" style="background: #D4A843"></span>ADCOP oil bypass pipeline</span>
+      <span class="wm-legend-item"><span class="wm-dot" style="background: #5B9FE4"></span>{{ t('waterMap.legendDesal') }}</span>
+      <span class="wm-legend-item"><span class="wm-dot" style="background: #2ECC87"></span>{{ t('waterMap.legendWells') }}</span>
+      <span class="wm-legend-item"><span class="wm-line" style="background: #D4A843"></span>{{ t('waterMap.legendPipeline') }}</span>
     </div>
     <div ref="mapEl" class="water-map"></div>
   </div>
