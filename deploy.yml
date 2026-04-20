@@ -1,0 +1,8 @@
+# Project deploy configuration
+# Docs: https://github.com/mrdn-world/.github
+
+project: uae-resilience #имя проекта 
+build: npm run build #команда для сборки
+output: dist #папка, которая уйдет на деплой (котроая появится после сборки)
+environments: 
+  main: uae-resilience #ветка:субдомен - какие ветки на какой субдомен пойдут, типа main:solar-map - при коммите в ветку main будет собирать проект и деплоить его на субдомен solar-map. Можно добавить несколько и разнести ветки на разные судбомены - типа dev: staging-solar-map => при коммите в дев будет деплоить на стейджинг

@@ -1,0 +1,77 @@
+// ── Color Palette ──────────────────────────────
+// Dark but warm — NOT grey-on-black
+
+// Backgrounds: deep navy with warmth
+$bg-0: #0B0F1A;        // deepest
+$bg-1: #111827;        // sections
+$bg-2: #1E2536;        // cards/elevated
+$bg-3: #2A3349;        // hover/active
+
+// Text: cream/warm white, not cold grey
+$text-1: #F5F0E8;      // primary — warm off-white
+$text-2: #C4BBA8;      // secondary — warm sand
+$text-3: #8A8372;      // muted — warm grey (WCAG AA on $bg-1)
+
+// UAE-inspired accents (desaturated for dark bg per best practice)
+$uae-green: #2ECC87;   // bright but not neon
+$uae-red: #E8564A;     // warm red
+$uae-gold: #D4A843;    // rich gold
+
+// Data colors (max 4, accessible)
+$data-1: #5B9FE4;      // steel blue
+$data-2: #E8564A;      // warm red
+$data-3: #2ECC87;      // green
+$data-4: #D4A843;      // gold
+
+// Status
+$status-good: $uae-green;
+$status-warn: $uae-gold;
+$status-bad: $uae-red;
+
+// Borders
+$border-1: rgba(255, 255, 255, 0.06);
+$border-2: rgba(255, 255, 255, 0.12);
+
+// ── Typography ─────────────────────────────────
+$font-display: 'Inter', system-ui, sans-serif;
+$font-body: 'Inter', system-ui, sans-serif;
+
+// Fluid type scale
+$type-hero: clamp(3rem, 2.5rem + 3vw, 5.5rem);
+$type-h1: clamp(2rem, 1.5rem + 2vw, 3.5rem);
+$type-h2: clamp(1.5rem, 1.2rem + 1.5vw, 2.5rem);
+$type-h3: clamp(1.1rem, 1rem + 0.5vw, 1.5rem);
+$type-body: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+$type-small: 0.875rem;
+$type-label: 0.8125rem;
+
+// ── Spacing ────────────────────────────────────
+$sp-4: 4px;
+$sp-8: 8px;
+$sp-12: 12px;
+$sp-16: 16px;
+$sp-24: 24px;
+$sp-32: 32px;
+$sp-48: 48px;
+$sp-64: 64px;
+$sp-96: 96px;
+$sp-128: 128px;
+
+// ── Layout ─────────────────────────────────────
+$max-w: 1200px;
+$bp-sm: 480px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+
+// ── Motion ─────────────────────────────────────
+$ease-out: cubic-bezier(0, 0, 0.2, 1);
+$ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+$dur-fast: 200ms;
+$dur-med: 400ms;
+$dur-slow: 800ms;
+
+// ── Radius ─────────────────────────────────────
+$r-sm: 6px;
+$r-md: 12px;
+$r-lg: 20px;
+$r-full: 9999px;

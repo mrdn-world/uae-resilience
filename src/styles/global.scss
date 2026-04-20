@@ -1,0 +1,38 @@
+@use 'variables' as *;
+@use 'animations';
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: $font-body;
+  background: $bg-0;
+  color: $text-1;
+  font-size: 17px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 3px; }
+::selection { background: rgba($uae-green, 0.25); }
+a { color: $uae-green; text-decoration: none; }
+img, svg, canvas { display: block; max-width: 100%; }
+
+// Section rhythm
+.section {
+  padding: $sp-128 0;
+  overflow: hidden;
+  @include mobile { padding: $sp-64 0; }
+}
+
+.section + .section {
+  border-top: 1px solid $border-1;
+}
