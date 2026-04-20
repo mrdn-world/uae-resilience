@@ -5,56 +5,56 @@
   },
   "hero": {
     "kicker": "While other countries plan for crises,",
-    "titleLine1": "the UAE already",
-    "titleLine2": "survived three.",
+    "titleLine1": "the UAE has already",
+    "titleLine2": "faced three",
     "timeline": [
-      { "yr": "2020", "what": "Global pandemic", "result": "Shelves stayed full. #8 resilience globally." },
-      { "yr": "2024", "what": "Worst floods ever recorded", "result": "Two years of rain in one day. Zero mass casualties." },
-      { "yr": "2026", "what": "137 ballistic missiles", "result": "96% shot down. President went to the mall." }
+      { "yr": "2020", "what": "Global pandemic", "result": "The UAE ranked 8th globally and 1st among Arab countries for Covid resilience" },
+      { "yr": "2024", "what": "Worst flooding on record", "result": "Dubai received more than a typical year’s rain in a single day" },
+      { "yr": "2026", "what": "Iranian strikes on the UAE", "result": "537 ballistic missiles, 26 cruise missiles, and 2,256 UAVs intercepted by air defences" }
     ]
   },
   "finance": {
     "label": "FINANCIAL RESERVES",
-    "headline": "Imagine earning $100K a year — with $300K in the bank and zero debt.",
-    "sub": "That's the UAE. Most countries owe more than they earn. The UAE {em}saved{/em} 3x its economy.",
+    "headline": "Imagine earning $100,000 a year, with more than $300,000 in savings and no debt",
+    "sub": "That is how the UAE looks at a national scale. While many countries borrow heavily, the UAE has built up state investment funds worth 3X its annual economy.",
     "proportion": {
-      "gdp": { "val": "$484B", "label": "GDP — what the country earns in a year" },
-      "swf": { "val": "$1.5T", "label": "Sovereign wealth — what's saved up across three government investment funds" },
+      "gdp": { "val": "$552B GDP", "label": "What the country produces in a year" },
+      "swf": { "val": "~$1.7T in wealth", "label": "What the UAE has built up across its three main Abu Dhabi investment funds" },
       "swfSources": [
-        { "label": "SWF Institute", "url": "https://www.swfinstitute.org/fund-rankings" }
+        { "label": "SWF Institute", "url": "https://www.swfinstitute.org/fund-rankings/sovereign-wealth-fund" }
       ]
     },
     "funds": {
-      "title": "Three funds, three jobs",
+      "title": "Three funds, three roles",
       "items": [
         {
-          "val": "~$1 Trillion",
+          "val": "~$1.13 trillion",
           "name": "Abu Dhabi Investment Authority",
-          "desc": "Owns real estate, stocks, and infrastructure in 30+ countries. Been saving since 1976 — that's 50 years of compounding."
+          "desc": "A global long-term investor founded in 1976. ADIA invests across asset classes and geographies."
         },
         {
-          "val": "$300 Billion",
+          "val": "$385 billion",
           "name": "Mubadala",
-          "desc": "Bets on the future — AI, semiconductors, aerospace, healthcare. Strategic long-term plays across 50 countries."
+          "desc": "Focuses on long-term strategic investing across sectors, including semiconductors, aerospace, healthcare, and AI-related industries."
         },
         {
-          "val": "$200 Billion",
+          "val": "$251 billion",
           "name": "ADQ",
-          "desc": "Owns the essentials: airports, seaports, hospitals, food companies, power plants. If it keeps the country running, ADQ probably owns it."
+          "desc": "Owns and develops businesses tied to critical infrastructure and supply chains."
         }
       ]
     },
     "regional": {
-      "title": "UAE vs its neighbors",
+      "title": "How the UAE compares",
       "titleSources": [
         { "label": "IMD Rankings", "url": "https://www.imd.org/centers/wcc/world-competitiveness-center/rankings/" }
       ],
       "metrics": [
-        { "name": "Economy not dependent on oil", "bars": [{ "c": "UAE", "w": 100, "v": "75%" }, { "c": "Saudi", "w": 67, "v": "50%" }, { "c": "Qatar", "w": 60, "v": "45%" }, { "c": "Kuwait", "w": 53, "v": "40%" }] },
-        { "name": "How modern is the infrastructure (Smart City Index)", "bars": [{ "c": "UAE", "w": 100, "v": "#4" }, { "c": "Saudi", "w": 6, "v": "#68" }, { "c": "Qatar", "w": 5, "v": "#77" }] },
-        { "name": "Global competitiveness (IMD ranking)", "bars": [{ "c": "UAE", "w": 100, "v": "#5" }, { "c": "Qatar", "w": 25, "v": "#20" }, { "c": "Saudi", "w": 21, "v": "#24" }] }
+        { "name": "Share of the economy not dependent on oil", "bars": [{ "c": "UAE", "w": 100, "v": "75%" }, { "c": "KSA", "w": 67, "v": "50%" }, { "c": "Qatar", "w": 60, "v": "66%" }, { "c": "Kuwait", "w": 53, "v": "50%" }] },
+        { "name": "The UAE leads Arab nations in the Smart City Index", "bars": [{ "c": "Dubai", "w": 100, "v": "#6" }, { "c": "Abu Dhabi", "w": 6, "v": "#10" }, { "c": "Riyadh", "w": 5, "v": "#24" }] },
+        { "name": "The UAE also tops the global competitiveness ranking", "bars": [{ "c": "UAE", "w": 100, "v": "#5" }, { "c": "Qatar", "w": 25, "v": "#9" }, { "c": "KSA", "w": 21, "v": "#17" }] }
       ],
-      "note": "#1 in the Middle East across every major global index."
+      "note": "#1 in the Middle East across every major global index"
     },
     "oil": {
       "title": "Oil price safety margin",
