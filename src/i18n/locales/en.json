@@ -9,12 +9,12 @@
     "titleLine2": "faced three",
     "timeline": [
       { "yr": "2020", "what": "Global pandemic", "result": "The UAE ranked 8th globally and 1st among Arab countries for Covid resilience" },
-      { "yr": "2024", "what": "Worst flooding on record", "result": "Dubai received more than a typical year’s rain in a single day" },
+      { "yr": "2024", "what": "Worst flooding on record", "result": "Dubai received more than a typical year’s rain in a single day and recovered fast" },
       { "yr": "2026", "what": "Iranian strikes on the UAE", "result": "537 ballistic missiles, 26 cruise missiles, and 2,256 UAVs intercepted by air defences" }
     ]
   },
 "finance": {
-  "label": "FINANCIAL RESERVES",
+  "label": "Financial reserves",
   "headline": "Imagine earning $100,000 a year, with more than $300,000 in savings and no debt",
   "sub": "That is how the UAE looks at a national scale. While many countries borrow heavily, the UAE has built up state investment funds worth 3X its annual economy.",
   "proportion": {
@@ -103,7 +103,7 @@
     ]
   },
   "food": {
-    "label": "FOOD SECURITY",
+    "label": "Food security",
     "headlineLine1": "How do you feed 10 million people",
     "headlineLine2": "in a country with very little farmland?",
     "importStrong": "Around 90% of the UAE’s food is imported,",
@@ -140,7 +140,7 @@
     "popupPct": "{pct}% of imports"
   },
   "water": {
-    "label": "WATER SECURITY",
+    "label": "Water security",
     "headlineLine1": "In one of the driest places on Earth,",
     "headlineLine2": "every drop is manufactured.",
     "tradeoff": {
@@ -208,7 +208,7 @@
     ]
   },
   "defense": {
-    "label": "AIR DEFENSE",
+    "label": "Air defense",
     "headlineLine1": "What happens when 2,819 missiles and drones",
     "headlineLine2": "are heading toward your cities?",
     "simBig": "93.6%",
@@ -238,7 +238,7 @@
     ]
   },
   "proof": {
-    "label": "THE PROOF",
+    "label": "The proof",
     "headlineLine1": "If it was not safe, why would",
     "headlineLine2": " 9 million foreigners stay?",
     "expatBig": "88%",
