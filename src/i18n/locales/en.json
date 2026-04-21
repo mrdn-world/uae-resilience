@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "UAE: Standing Strong",
-    "description": "How the UAE maintains national resilience during the 2026 regional crisis"
+    "description": "How the UAE maintains national resilience"
   },
   "hero": {
     "kicker": "While other countries plan for crises,",
@@ -13,17 +13,14 @@
       { "yr": "2026", "what": "Iranian strikes on the UAE", "result": "537 ballistic missiles, 26 cruise missiles, and 2,256 UAVs intercepted by air defences" }
     ]
   },
-  "finance": {
-    "label": "FINANCIAL RESERVES",
-    "headline": "Imagine earning $100,000 a year, with more than $300,000 in savings and no debt",
-    "sub": "That is how the UAE looks at a national scale. While many countries borrow heavily, the UAE has built up state investment funds worth 3X its annual economy.",
-    "proportion": {
-      "gdp": { "val": "$552B GDP", "label": "What the country produces in a year" },
-      "swf": { "val": "~$1.7T in wealth", "label": "What the UAE has built up across its three main Abu Dhabi investment funds" },
-      "swfSources": [
-        { "label": "SWF Institute", "url": "https://www.swfinstitute.org/fund-rankings/sovereign-wealth-fund" }
-      ]
-    },
+"finance": {
+  "label": "FINANCIAL RESERVES",
+  "headline": "Imagine earning $100,000 a year, with more than $300,000 in savings and no debt",
+  "sub": "That is how the UAE looks at a national scale. While many countries borrow heavily, the UAE has built up state investment funds worth 3X its annual economy.",
+  "proportion": {
+    "gdp": { "val": "$552B GDP", "label": "What the country produces in a year" },
+    "swf": { "val": "~$1.7T in wealth", "label": "What the UAE has built up across its three main Abu Dhabi investment funds" }
+  },
     "funds": {
       "title": "Three funds, three roles",
       "items": [
@@ -74,58 +71,59 @@
       "titleSources": [
         { "label": "IMF Article IV", "url": "https://www.imf.org/en/countries/are" }
       ],
-      "zoneDanger": "$0–60",
-      "zoneSurplus": "+$43 surplus",
-      "breakevenVal": "$60",
+      "zoneDanger": "$0–45",
+      "zoneSurplus": "+$50 surplus",
+      "breakevenVal": "$44.8",
       "breakevenDesc": "breakeven",
-      "currentVal": "$103",
+      "currentVal": "$95",
       "currentDesc": "current price",
-      "note": "Every barrel produces {strong}$43 of pure surplus{/strong}. Oil could crash 40% and the budget would still work."
+      "note": "At current oil prices, the UAE is well above its estimated fiscal breakeven. Even after a sharp fall, public finances would remain resilient."
     },
     "trust": {
       "title": "Can you trust this country with your money?",
-      "intro": "Three independent agencies grade every nation's finances. The UAE scores near-perfect — even during a war:",
+      "intro": "All major agencies keep the UAE in the high-grade category, supported by strong fiscal buffers, large assets, and low public debt.",
       "ratings": [
         { "g": "AA", "who": "S&P" },
         { "g": "Aa2", "who": "Moody's" },
         { "g": "AA-", "who": "Fitch" }
       ],
-      "note": "Only about 20 countries on Earth score this high."
+      "note": "Very few countries score this highly across all three major rating agencies."
     },
-    "context": "{strong}Context:{/strong} Most of these savings are locked in long-term investments — real estate, infrastructure, company stakes. Converting a skyscraper to cash takes time. And tourism still dips hard during crises: 80,000 hotel cancellations in 48 hours during the March 2026 strikes.",
     "sources": [
-      { "label": "SWF Institute", "url": "https://www.swfinstitute.org/fund-rankings" },
+      { "label": "NCEMA", "url": "https://www.ncema.gov.ae/en/media-center/news/28/4/2021/uae-leads-arab-world-advances-to-8th-position-globally-in-bloombergs-covid-resilience-ranking-government-media-briefing.aspx" },
+      { "label": "AP", "url": "https://apnews.com/article/uae-oman-rains-flooding-fatalities-7bf3881efbea998dfa4c1ed8d538217c" },
+      { "label": "@modgovae", "url": "https://x.com/modgovae/status/2042196918672191644" },
+      { "label": "World Bank", "url": "https://data.worldbank.org/country/united-arab-emirates" },
+      { "label": "SWF Institute", "url": "https://www.swfinstitute.org/fund-rankings/sovereign-wealth-fund" },
+      { "label": "Mubadala", "url": "https://www.mubadala.com/en/who-we-are/about-mubadala" },
+      { "label": "ADQ", "url": "https://www.adq.ae/newsroom/adq-closes-usd-5-billion-financing-deal-with-asian-financial-institutions" },
       { "label": "IMF — UAE", "url": "https://www.imf.org/en/countries/are" },
-      { "label": "IMD Competitiveness", "url": "https://www.imd.org/centers/wcc/world-competitiveness-center/rankings/" },
+      { "label": "IMD", "url": "https://www.imd.org/centers/wcc/world-competitiveness-center/" },
       { "label": "S&P Global Ratings", "url": "https://www.spglobal.com/ratings/" }
     ]
   },
   "food": {
     "label": "FOOD SECURITY",
     "headlineLine1": "How do you feed 10 million people",
-    "headlineLine2": "in a country with almost no farmland?",
-    "importStrong": "90% of food is imported",
-    "importSources": [
-      { "label": "FAOSTAT", "url": "https://www.fao.org/faostat/en/" },
-      { "label": "UAE Food Strategy", "url": "https://u.ae/en/about-the-uae/strategies-initiatives-and-awards/strategies-plans-and-visions/environment-and-energy/national-food-security-strategy-2051" }
-    ],
-    "importText": " — but from 6 different regions, with 3–5 backup suppliers per product category. Not all eggs in one basket.",
-    "reserveNumber": "6 months",
-    "reserveText": "of strategic food reserves stockpiled. If every import stopped tomorrow, the country keeps eating for half a year.",
-    "reserveRank": "#1 in the Middle East for food security.",
-    "sourcesTitle": "Six continents feed this country",
+    "headlineLine2": "in a country with very little farmland?",
+    "importStrong": "Around 90% of the UAE’s food is imported,",
+    "importText": " but the system is designed for resilience: diversified suppliers, strategic reserves, and strong logistics.",
+    "reserveNumber": "57,000 ha",
+    "reserveText": "In 2018, a UAE company bought the largest farm in the EU, covering 57,000 hectares, for £263 million.",
+    "reserveRank": "The Agricost Farm in Romania",
+    "sourcesTitle": "Six regions feed this country",
     "sourcesNote": "Hover over the circles to see what comes from where. Each source has 3–5 backup suppliers.",
-    "farmTitle": "They're also growing food in the desert. Literally.",
+    "farmTitle": "The country is also growing food in the desert. Literally.",
     "farms": [
-      { "name": "Bustanica", "desc": " — an indoor farm the size of 4 football fields, growing over 1 million kg of lettuce and herbs per year without soil, using 95% less water than traditional farming." },
-      { "name": "Pure Harvest Smart Farms", "desc": " — builds climate-controlled greenhouses that grow tomatoes and strawberries year-round in 50°C heat. Supplies supermarkets across the Gulf." },
-      { "name": "Food Tech Valley", "desc": " — a government R&D center developing robot-operated farms, soil-free growing, and AI that predicts crop yields. Goal: 30% of fresh produce grown locally by 2030." }
+      { "name": "Bustanica:", "desc": " a 330,000 sq ft indoor farm in Dubai, producing more than 1 million kg of leafy greens a year with 95% less water." },
+      { "name": "Pure Harvest Smart Farms:", "desc": " climate-controlled farms that grow tomatoes, berries, and greens year-round for Gulf markets." },
+      { "name": "Food Tech Valley:", "desc": " a Dubai government-led food-tech hub combining farming, logistics, and R&D." }
     ],
-    "context": "{strong}Context:{/strong} Reserves and waste coexist — 3.27 million tons of food wasted per year ($3.5 billion). And if both the Strait of Hormuz and Red Sea close simultaneously, air freight costs 10–20x more than shipping.",
     "sources": [
-      { "label": "FAOSTAT", "url": "https://www.fao.org/faostat/en/" },
+      { "label": "moccae.gov.ae", "url": "https://www.moccae.gov.ae/en/media-center/news/9/2/2018/uae-minister-of-climate-change-and-environment-attends-a-private-reception-on-crop-diversity-7a68c8ad" },
       { "label": "Global Food Security Index", "url": "https://impact.economist.com/sustainability/project/food-security-index/" },
       { "label": "UAE Food Strategy 2051", "url": "https://u.ae/en/about-the-uae/strategies-initiatives-and-awards/strategies-plans-and-visions/environment-and-energy/national-food-security-strategy-2051" },
+      { "label": "farmlandgrab.org", "url": "https://www.farmlandgrab.org/post/32417-the-incredible-263m-farm-that-s-the-biggest-in-europe-but-owned-by-the-middle-east" },      
       { "label": "USDA — UAE Market", "url": "https://www.fas.usda.gov/regions/united-arab-emirates" }
     ]
   },
@@ -211,30 +209,17 @@
   },
   "defense": {
     "label": "AIR DEFENSE",
-    "headlineLine1": "What happens when 137 missiles",
+    "headlineLine1": "What happens when 2,819 missiles and drones",
     "headlineLine2": "are heading toward your cities?",
-    "simBig": "96%",
+    "simBig": "93.6%",
     "simBigSources": [
-      { "label": "MDAA", "url": "https://www.missiledefenseadvocacy.org/international-cooperation/united-arab-emirates/" },
-      { "label": "SIPRI", "url": "https://armstransfers.sipri.org/" }
+      { "label": "WAM", "url": "https://www.wam.ae/en/article/bz4tlwp-uae-air-defences-intercept-ballistic-missiles" }
     ],
-    "simSub": "interception rate",
-    "missileHeader": "137 ballistic missiles — each dot is one missile",
-    "missileLegendGood": "132 intercepted",
-    "missileLegendBad": "5 got through — 6 killed, 141 injured",
-    "droneLabelPrefix": "",
-    "droneStrong": "195",
-    "droneLabelSuffix": " attack drones destroyed",
-    "comparison": {
-      "title": "How 96% compares",
-      "rows": [
-        { "sys": "UAE (March 2026)", "pct": 96, "color": "#2ECC87" },
-        { "sys": "Israel Iron Dome", "pct": 90, "color": "#5B9FE4" },
-        { "sys": "US Patriot (Gulf War)", "pct": 40, "color": "#E8564A" }
-      ],
-      "note": "Different eras, different threats, different systems — but the gap is telling. The UAE's air defense performed at historically exceptional levels."
-    },
-    "layersTitle": "5 layers from space to rooftop — no gap in coverage",
+    "simSub": "latest published interception rate",
+    "missileHeader": "As of April 2026, the UAE had intercepted 537 ballistic missiles, 26 cruise missiles, and 2,256 UAVs",
+    "missileLegendGood": "2,256 UAVs",
+    "missileLegendBad": "563 ballistic and cruise missiles",
+    "layersTitle": "5 layers from space to rooftop with no gaps in coverage",
     "altMarks": ["150 km", "40 km", "25 km", "15 km", "Ground"],
     "layers": [
       { "name": "THAAD", "alt": "150 km", "range": "200 km", "what": "Kills ballistic missiles in space before re-entry", "note": "First nation outside the US to have it", "color": "#5B9FE4" },
@@ -243,8 +228,8 @@
       { "name": "Pantsir-S1", "alt": "15 km", "range": "20 km", "what": "Short-range point defense — catches what others miss", "note": "~50 units deployed", "color": "#E8564A" },
       { "name": "Laser & drone killers", "alt": "2 km", "range": "5 km", "what": "SkyKnight + Silent Hunter 30kW laser — last line vs drones", "note": "Made in UAE (EDGE Group)", "color": "#D4A843" }
     ],
-    "context": "{strong}Context:{/strong} THAAD and Patriot ammunition is American-made — resupply during active conflict depends on a political decision in Washington. The UAE is building domestic capability (EDGE Group: $4.9B revenue, Top 25 globally), but most advanced systems are still imported. Localization is at ~25%; the target is 50%.",
     "sources": [
+      { "label": "WAM", "url": "https://www.wam.ae/en/article/bz4tlwp-uae-air-defences-intercept-ballistic-missiles" },
       { "label": "SIPRI Arms Transfers", "url": "https://armstransfers.sipri.org/" },
       { "label": "SIPRI Military Expenditure", "url": "https://milex.sipri.org/" },
       { "label": "MDAA — UAE Profile", "url": "https://www.missiledefenseadvocacy.org/international-cooperation/united-arab-emirates/" },
@@ -254,22 +239,16 @@
   },
   "proof": {
     "label": "THE PROOF",
-    "headlineLine1": "If it wasn't safe, why would",
-    "headlineLine2": "9 million foreigners stay?",
+    "headlineLine1": "If it was not safe, why would",
+    "headlineLine2": " 9 million foreigners stay?",
     "expatBig": "88%",
     "expatSources": [
       { "label": "UAE Statistics", "url": "https://fcsc.gov.ae/" }
     ],
-    "expatLabel": "of everyone living in the UAE is a foreigner",
-    "expatP1": "They have passports. They have options. They could leave. Through a pandemic, record floods, and missile strikes — they overwhelmingly chose to stay.",
-    "expatP2": "When 9 million people with exit options choose not to use them, that's not government PR. {strong}That's a verdict.{/strong}",
-    "testsTitle": "Three existential tests, three passes",
-    "tests": [
-      { "yr": "2020", "name": "COVID-19", "key": "Shelves stayed full while borders were closed. First country to run Phase III vaccine trials. Built 19,000 m² of ultra-cold vaccine storage from scratch.", "color": "#2ECC87" },
-      { "yr": "2024", "name": "Record floods", "key": "Two years of average rainfall in a single day. Emergency systems activated within minutes. Digital alerts reached every phone. Zero mass casualties.", "color": "#5B9FE4" },
-      { "yr": "2026", "name": "Missile strike", "key": "137 ballistic missiles fired at UAE cities. 132 intercepted. 195 drones destroyed. Markets recovered in 14 days. GDP forecast held at +5.5%.", "color": "#E8564A" }
-    ],
-    "kicker": "None of this happened by accident. Every system that held during these crises was designed, built, and tested years in advance. The UAE government has spent {strong}hundreds of billions of dollars over three decades{/strong} on resilience infrastructure — not because a crisis was coming, but because they assumed one always is.",
+    "expatLabel": "of the UAE’s population is foreign-born",
+    "expatP1": "They have passports. They have options. They could leave. Through a pandemic, record floods, and missile strikes, they overwhelmingly chose to stay.",
+    "expatP2": "When 9 million people with the option to leave choose not to use it, that is one of the clearest signs of national resilience.",
+    "kicker": "None of this happened by accident. Every system needed to manage any kind of crisis was designed, built, and tested years in advance. The UAE government has spent hundreds of billions of dollars over decades on resilience infrastructure to prepare for what lay ahead. And it continues to do so.",
     "sources": [
       { "label": "FCSC — UAE Statistics", "url": "https://fcsc.gov.ae/" },
       { "label": "Bloomberg Resilience", "url": "https://www.bloomberg.com/graphics/covid-resilience-ranking/" },
@@ -279,11 +258,9 @@
     ]
   },
   "footer": {
-    "titleLine1": "Not invulnerable.",
-    "titleLine2": "Resilient.",
-    "body": "The UAE didn't dodge every crisis. People died. Markets froze. Floodwater filled highways. But each time, the systems held — not because they're perfect, but because they were designed with redundancy, diversification, and the uncomfortable assumption that the worst will happen.",
+    "titleLine1": "This is what truly resilient nation looks like.",
     "sourcesLabel": "Sources:",
-    "sourcesText": " UAE government portals (u.ae, NCEMA) · SIPRI · World Bank · FAOSTAT · GlobalFirepower · Missile Defense Advocacy Alliance · DP World · AD Ports Group · Emirates Group · EDGE Group · SWF Institute · Bloomberg · Reuters",
+    "sourcesText": " UAE government portals (u.ae, NCEMA) · SIPRI · World Bank · FAOSTAT · GlobalFirepower · Missile Defence Advocacy Alliance · DP World · AD Ports Group · Emirates Group · EDGE Group · SWF Institute · Bloomberg · Reuters",
     "bar": "UAE National Resilience · 2026"
   },
   "common": {

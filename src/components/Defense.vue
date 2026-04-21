@@ -102,8 +102,8 @@ const layers = t('defense.layers') as Array<{ name: string, alt: string, range: 
         <div class="missile-dots">
           <div class="md-header">{{ t('defense.missileHeader') }}</div>
           <div class="md-grid">
-            <div v-for="i in 137" :key="i" class="md-dot"
-              :class="{ hit: i > 132 }"
+            <div v-for="i in 200" :key="i" class="md-dot"
+              :class="{ hit: i > 160 }"
               :style="{ animationDelay: `${i * 8}ms` }"
             ></div>
           </div>
@@ -113,29 +113,8 @@ const layers = t('defense.layers') as Array<{ name: string, alt: string, range: 
           </div>
         </div>
 
-        <!-- Drones -->
-        <div class="drone-strip">
-          <div class="drn-dots">
-            <div v-for="i in 195" :key="i" class="drn-dot" :style="{ animationDelay: `${i * 5}ms` }"></div>
-          </div>
-          <div class="drn-text">{{ t('defense.droneLabelPrefix') }}<strong>{{ t('defense.droneStrong') }}</strong>{{ t('defense.droneLabelSuffix') }}</div>
-        </div>
       </div>
 
-      <!-- Comparison: how 96% stacks up -->
-      <div class="comparison">
-        <h3>{{ t('defense.comparison.title') }}</h3>
-        <div class="comp-rows">
-          <div class="comp-row" v-for="(c, i) in t('defense.comparison.rows')" :key="c.sys">
-            <span class="comp-sys">{{ c.sys }}</span>
-            <div class="comp-track">
-              <div class="comp-bar" :style="{ width: revealed ? c.pct + '%' : '0%', background: c.color, transitionDelay: `${0.3 + i * 0.15}s` }"></div>
-            </div>
-            <span class="comp-pct" :style="{ color: c.color }">{{ c.pct }}%</span>
-          </div>
-        </div>
-        <p class="comp-note">{{ t('defense.comparison.note') }}</p>
-      </div>
 
       <!-- Altitude layers — proportional height diagram -->
       <div class="layers">
@@ -164,7 +143,6 @@ const layers = t('defense.layers') as Array<{ name: string, alt: string, range: 
         </div>
       </div>
 
-      <div class="def-context" v-html="tHtml('defense.context')"></div>
       <Sources :items="t('defense.sources')" />
     </div>
   </section>

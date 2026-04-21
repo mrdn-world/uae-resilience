@@ -5,8 +5,7 @@ import { t } from '@/i18n'
 <template>
   <footer class="footer">
     <div class="footer-inner">
-      <h2>{{ t('footer.titleLine1') }}<br>{{ t('footer.titleLine2') }}</h2>
-      <p>{{ t('footer.body') }}</p>
+      <h2>{{ t('footer.titleLine1') }}</h2>
       <div class="footer-sources">
         <strong>{{ t('footer.sourcesLabel') }}</strong>{{ t('footer.sourcesText') }}
       </div>
@@ -23,7 +22,7 @@ import { t } from '@/i18n'
 
 .footer-inner {
   @include container;
-  max-width: 680px;
+  max-width: 740px;
   text-align: center;
 
   h2 {

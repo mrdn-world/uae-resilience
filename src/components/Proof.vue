@@ -40,17 +40,6 @@ const { el, revealed } = useReveal()
         </div>
       </div>
 
-      <!-- Three tests — compact, no grids of numbers -->
-      <div class="tests">
-        <h3>{{ t('proof.testsTitle') }}</h3>
-        <div class="test" v-for="test in t('proof.tests')" :key="test.yr" :style="{ borderLeftColor: test.color }">
-          <div class="test-head">
-            <span class="test-yr" :style="{ color: test.color }">{{ test.yr }}</span>
-            <span class="test-name">{{ test.name }}</span>
-          </div>
-          <p class="test-key">{{ test.key }}</p>
-        </div>
-      </div>
 
       <div class="proof-kicker" v-html="tHtml('proof.kicker')"></div>
 

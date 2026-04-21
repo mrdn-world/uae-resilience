@@ -108,8 +108,6 @@ const { el, revealed } = useReveal()
       </div>
       </div>
 
-      <div class="fin-context" v-html="tHtml('finance.context')"></div>
-
       <Sources :items="t('finance.sources')" />
     </div>
   </section>

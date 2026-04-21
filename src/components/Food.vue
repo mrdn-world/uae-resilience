@@ -53,7 +53,6 @@ const { el, revealed } = useReveal()
         </div>
       </div>
 
-      <div class="food-context" v-html="tHtml('food.context')"></div>
 
       <Sources :items="t('food.sources')" />
     </div>
