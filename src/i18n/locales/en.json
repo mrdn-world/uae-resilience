@@ -50,9 +50,22 @@
         { "label": "IMD Rankings", "url": "https://www.imd.org/centers/wcc/world-competitiveness-center/rankings/" }
       ],
       "metrics": [
-        { "name": "Share of the economy not dependent on oil", "bars": [{ "c": "UAE", "w": 100, "v": "75%" }, { "c": "KSA", "w": 67, "v": "50%" }, { "c": "Qatar", "w": 60, "v": "66%" }, { "c": "Kuwait", "w": 53, "v": "50%" }] },
-        { "name": "The UAE leads Arab nations in the Smart City Index", "bars": [{ "c": "Dubai", "w": 100, "v": "#6" }, { "c": "Abu Dhabi", "w": 6, "v": "#10" }, { "c": "Riyadh", "w": 5, "v": "#24" }] },
-        { "name": "The UAE also tops the global competitiveness ranking", "bars": [{ "c": "UAE", "w": 100, "v": "#5" }, { "c": "Qatar", "w": 25, "v": "#9" }, { "c": "KSA", "w": 21, "v": "#17" }] }
+        { "name": "Share of the economy not dependent on oil", "bars": [
+          { "c": "UAE", "w": 100, "v": "75%" },
+          { "c": "Qatar", "w": 88, "v": "66%" },
+          { "c": "KSA", "w": 67, "v": "50%" },
+          { "c": "Kuwait", "w": 67, "v": "50%" }
+        ] },
+        { "name": "The UAE leads Arab nations in the Smart City Index", "bars": [
+          { "c": "Dubai", "w": 100, "v": "#6" },
+          { "c": "Abu Dhabi", "w": 60, "v": "#10" },
+          { "c": "Riyadh", "w": 25, "v": "#24" }
+        ] },
+        { "name": "The UAE also tops the global competitiveness ranking", "bars": [
+          { "c": "UAE", "w": 100, "v": "#5" },
+          { "c": "Qatar", "w": 56, "v": "#9" },
+          { "c": "KSA", "w": 29, "v": "#17" }
+        ] }
       ],
       "note": "#1 in the Middle East across every major global index"
     },
