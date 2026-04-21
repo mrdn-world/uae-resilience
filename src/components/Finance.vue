@@ -63,47 +63,49 @@ const { el, revealed } = useReveal()
             </div>
             <p class="reg-note">{{ t('finance.regional.note') }}</p>
           </div>
+        </div>
+      </div>
 
-          <!-- Oil price gauge — single bar with zones -->
-          <div class="oil-gauge">
-            <h3>{{ t('finance.oil.title') }} <SourceTip :sources="t('finance.oil.titleSources')" /></h3>
-            <div class="og-bar">
-              <div class="og-zone danger" :style="{ width: revealed ? '46%' : '0%' }">
-                <span class="og-label">{{ t('finance.oil.zoneDanger') }}</span>
-              </div>
-              <div class="og-zone surplus" :style="{ width: revealed ? '33%' : '0%' }">
-                <span class="og-label">{{ t('finance.oil.zoneSurplus') }}</span>
-              </div>
-              <div class="og-zone headroom" :style="{ width: revealed ? '21%' : '0%' }"></div>
-            </div>
-            <div class="og-markers">
-              <div class="og-mark" style="left: 46%">
-                <span class="og-mark-line"></span>
-                <span class="og-mark-val">{{ t('finance.oil.breakevenVal') }}</span>
-                <span class="og-mark-desc">{{ t('finance.oil.breakevenDesc') }}</span>
-              </div>
-              <div class="og-mark" style="left: 79%">
-                <span class="og-mark-line"></span>
-                <span class="og-mark-val">{{ t('finance.oil.currentVal') }}</span>
-                <span class="og-mark-desc">{{ t('finance.oil.currentDesc') }}</span>
-              </div>
-            </div>
-            <p class="og-note" v-html="tHtml('finance.oil.note')"></p>
+      <div class="oil-trust-grid">
+      <!-- Oil price gauge — single bar with zones -->
+      <div class="oil-gauge">
+        <h3>{{ t('finance.oil.title') }} <SourceTip :sources="t('finance.oil.titleSources')" /></h3>
+        <div class="og-bar">
+          <div class="og-zone danger" :style="{ width: revealed ? '46%' : '0%' }">
+            <span class="og-label">{{ t('finance.oil.zoneDanger') }}</span>
           </div>
-
-          <!-- Trust score -->
-          <div class="trust">
-            <h3>{{ t('finance.trust.title') }}</h3>
-            <p>{{ t('finance.trust.intro') }}</p>
-            <div class="trust-row">
-              <div class="trust-badge" v-for="r in t('finance.trust.ratings')" :key="r.who">
-                <span class="tb-grade">{{ r.g }}</span>
-                <span class="tb-who">{{ r.who }}</span>
-              </div>
-            </div>
-            <p class="trust-note">{{ t('finance.trust.note') }}</p>
+          <div class="og-zone surplus" :style="{ width: revealed ? '33%' : '0%' }">
+            <span class="og-label">{{ t('finance.oil.zoneSurplus') }}</span>
+          </div>
+          <div class="og-zone headroom" :style="{ width: revealed ? '21%' : '0%' }"></div>
+        </div>
+        <div class="og-markers">
+          <div class="og-mark" style="left: 46%">
+            <span class="og-mark-line"></span>
+            <span class="og-mark-val">{{ t('finance.oil.breakevenVal') }}</span>
+            <span class="og-mark-desc">{{ t('finance.oil.breakevenDesc') }}</span>
+          </div>
+          <div class="og-mark" style="left: 79%">
+            <span class="og-mark-line"></span>
+            <span class="og-mark-val">{{ t('finance.oil.currentVal') }}</span>
+            <span class="og-mark-desc">{{ t('finance.oil.currentDesc') }}</span>
           </div>
         </div>
+        <p class="og-note" v-html="tHtml('finance.oil.note')"></p>
+      </div>
+
+      <!-- Trust score -->
+      <div class="trust">
+        <h3>{{ t('finance.trust.title') }}</h3>
+        <p>{{ t('finance.trust.intro') }}</p>
+        <div class="trust-row">
+          <div class="trust-badge" v-for="r in t('finance.trust.ratings')" :key="r.who">
+            <span class="tb-grade">{{ r.g }}</span>
+            <span class="tb-who">{{ r.who }}</span>
+          </div>
+        </div>
+        <p class="trust-note">{{ t('finance.trust.note') }}</p>
+      </div>
       </div>
 
       <div class="fin-context" v-html="tHtml('finance.context')"></div>
@@ -233,8 +235,17 @@ const { el, revealed } = useReveal()
 
 .reg-note { font-size: $type-small; color: $text-3; font-style: italic; }
 
+// Oil + Trust grid
+.oil-trust-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $sp-32;
+  align-items: start;
+  @include mobile { grid-template-columns: 1fr; }
+}
+
 // Oil gauge
-.oil-gauge { margin-bottom: $sp-32; }
+.oil-gauge { margin-bottom: 0; }
 
 .og-bar {
   display: flex;
@@ -293,7 +304,7 @@ const { el, revealed } = useReveal()
 .og-note { font-size: $type-small; color: $text-3; margin-top: $sp-8; strong { color: $uae-green; } }
 
 // Trust
-.trust { margin-bottom: $sp-16; }
+.trust { margin-bottom: 0; }
 
 .trust-row {
   display: flex;
