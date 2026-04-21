@@ -1,16 +1,16 @@
 // ── Color Palette ──────────────────────────────
 // Dark but warm — NOT grey-on-black
 
-// Backgrounds: deep navy with warmth
-$bg-0: #0B0F1A;        // deepest
-$bg-1: #111827;        // sections
-$bg-2: #1E2536;        // cards/elevated
-$bg-3: #2A3349;        // hover/active
+// Backgrounds: warm whites
+$bg-0: #F8F6F2;        // warm off-white page
+$bg-1: #FFFFFF;        // sections
+$bg-2: #F2EFE9;        // cards/elevated
+$bg-3: #E8E4DC;        // hover/active
 
-// Text: cream/warm white, not cold grey
-$text-1: #F5F0E8;      // primary — warm off-white
-$text-2: #C4BBA8;      // secondary — warm sand
-$text-3: #8A8372;      // muted — warm grey (WCAG AA on $bg-1)
+// Text: dark on light
+$text-1: #0B0F1A;      // primary — near black
+$text-2: #4B4540;      // secondary — dark warm grey
+$text-3: #7A7268;      // muted — mid warm grey
 
 // UAE-inspired accents (desaturated for dark bg per best practice)
 $uae-green: #2ECC87;   // bright but not neon
@@ -29,8 +29,8 @@ $status-warn: $uae-gold;
 $status-bad: $uae-red;
 
 // Borders
-$border-1: rgba(255, 255, 255, 0.06);
-$border-2: rgba(255, 255, 255, 0.12);
+$border-1: rgba(0, 0, 0, 0.07);
+$border-2: rgba(0, 0, 0, 0.13);
 
 // ── Typography ─────────────────────────────────
 $font-display: 'Graphik', system-ui, sans-serif;
@@ -43,7 +43,7 @@ $type-h2: clamp(1.5rem, 1.2rem + 1.5vw, 2.5rem);
 $type-h3: clamp(1.1rem, 1rem + 0.5vw, 1.5rem);
 $type-body: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
 $type-small: 0.875rem;
-$type-label: 0.8125rem;
+$type-label: 1.25rem;
 
 // ── Spacing ────────────────────────────────────
 $sp-4: 4px;

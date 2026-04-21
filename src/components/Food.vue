@@ -12,7 +12,7 @@ const { el, revealed } = useReveal()
     <div class="food-wrap">
 
       <div class="food-header">
-        <p class="food-label">{{ t('food.label') }}</p>
+        <p class="food-label gl-label">{{ t('food.label') }}</p>
         <h2>{{ t('food.headlineLine1') }}<br>{{ t('food.headlineLine2') }}</h2>
       </div>
 
@@ -24,7 +24,8 @@ const { el, revealed } = useReveal()
               :style="{ transitionDelay: revealed ? `${i * 5}ms` : '0ms' }"></div>
           </div>
           <div class="fi-text">
-            <strong>{{ t('food.importStrong') }}</strong><SourceTip :sources="t('food.importSources')" />{{ t('food.importText') }}
+            <strong>{{ t('food.importStrong') }}</strong>
+            {{ t('food.importText') }}
           </div>
         </div>
         <div class="fact-reserve">
@@ -67,7 +68,10 @@ const { el, revealed } = useReveal()
   @include reveal;
   .revealed & { opacity: 1; transform: none; }
 
-  .food-label { font-size: $type-label; font-weight: 700; color: $uae-green; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: $sp-8; }
+  .food-label {
+    // color: $uae-green;
+    margin-bottom: $sp-8;
+  }
   h2 { font-size: $type-h1; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; }
 }
 

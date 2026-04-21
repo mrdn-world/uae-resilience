@@ -30,7 +30,7 @@ const open = ref(false)
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.06);
+  background: rgba(0,0,0,0.07);
   color: $text-3;
   font-size: 9px;
   font-weight: 700;
@@ -40,7 +40,7 @@ const open = ref(false)
   justify-content: center;
   transition: background $dur-fast $ease-out;
 
-  .src-tip:hover & { background: rgba(255,255,255,0.12); color: $text-2; }
+  .src-tip:hover & { background: rgba(0,0,0,0.12); color: $text-2; }
 }
 
 .src-popup {

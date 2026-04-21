@@ -55,7 +55,7 @@ onMounted(() => {
     maxBounds: [[-60, -180], [75, 200]],
   })
 
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
     maxZoom: 6,
   }).addTo(map)
 

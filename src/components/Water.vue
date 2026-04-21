@@ -18,7 +18,7 @@ const tradeoffRowGeo = [
     <div class="water-wrap">
 
       <div class="water-header">
-        <p class="water-label">{{ t('water.label') }}</p>
+        <p class="water-label gl-label">{{ t('water.label') }}</p>
         <h2>{{ t('water.headlineLine1') }}<br>{{ t('water.headlineLine2') }}</h2>
       </div>
 
@@ -30,7 +30,7 @@ const tradeoffRowGeo = [
             <!-- Usage bar -->
             <div class="wtr-use">
               <div class="wtr-bar-bg">
-                <div class="wtr-bar" :style="{ width: revealed ? tradeoffRowGeo[i].usePct + '%' : '0%', background: tradeoffRowGeo[i].color + '55', transitionDelay: `${i * 0.15}s` }"></div>
+                <div class="wtr-bar" :style="{ width: revealed ? tradeoffRowGeo[i].usePct + '%' : '0%', background: tradeoffRowGeo[i].color, transitionDelay: `${i * 0.15}s` }"></div>
               </div>
               <span class="wtr-val" :style="{ color: tradeoffRowGeo[i].color }">{{ r.use }}</span>
             </div>
@@ -44,7 +44,7 @@ const tradeoffRowGeo = [
             <!-- Duration bar -->
             <div class="wtr-lasts">
               <div class="wtr-bar-bg">
-                <div class="wtr-bar" :style="{ width: revealed ? tradeoffRowGeo[i].lastPct + '%' : '0%', background: tradeoffRowGeo[i].color + '55', transitionDelay: `${0.3 + i * 0.15}s` }"></div>
+                <div class="wtr-bar" :style="{ width: revealed ? tradeoffRowGeo[i].lastPct + '%' : '0%', background: tradeoffRowGeo[i].color, transitionDelay: `${0.3 + i * 0.15}s` }"></div>
               </div>
               <span class="wtr-val" :style="{ color: tradeoffRowGeo[i].color }">{{ r.lasts }}</span>
             </div>
@@ -142,7 +142,10 @@ const tradeoffRowGeo = [
   @include reveal;
   .revealed & { opacity: 1; transform: none; }
 
-  .water-label { font-size: $type-label; font-weight: 700; color: $data-1; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: $sp-8; }
+  .water-label {
+    // color: $data-1;
+    margin-bottom: $sp-8;
+  }
   h2 { font-size: $type-h1; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; }
 }
 
@@ -183,8 +186,8 @@ const tradeoffRowGeo = [
 
 .wtr-use, .wtr-lasts {
   .wtr-bar-bg {
-    height: 8px;
-    background: rgba(255,255,255,0.04);
+    height: 1.5rem;
+    background: rgba(0,0,0,0.07);
     border-radius: 4px;
     overflow: hidden;
     margin-bottom: $sp-4;

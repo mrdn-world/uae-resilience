@@ -11,7 +11,7 @@ const { el, revealed } = useReveal()
     <div class="proof-wrap">
 
       <div class="proof-header">
-        <p class="proof-label">{{ t('proof.label') }}</p>
+        <p class="proof-label gl-label">{{ t('proof.label') }}</p>
         <h2>{{ t('proof.headlineLine1') }}<br>{{ t('proof.headlineLine2') }}</h2>
       </div>
 
@@ -56,7 +56,10 @@ const { el, revealed } = useReveal()
   @include reveal;
   .revealed & { opacity: 1; transform: none; }
 
-  .proof-label { font-size: $type-label; font-weight: 700; color: $uae-gold; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: $sp-8; }
+  .proof-label {
+    // color: $uae-gold;
+    margin-bottom: $sp-8;
+  }
   h2 { font-size: $type-h1; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; }
 }
 
@@ -131,7 +134,7 @@ const { el, revealed } = useReveal()
   max-width: 700px;
   margin: 0 auto;
   padding: $sp-32;
-  background: rgba($uae-green, 0.03);
+  background: rgba($uae-green, 0.1);
   border: 1px solid rgba($uae-green, 0.08);
   border-radius: $r-md;
   strong { color: $text-1; }

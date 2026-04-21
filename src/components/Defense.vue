@@ -84,8 +84,8 @@ const layers = t('defense.layers') as Array<{ name: string, alt: string, range: 
     <div class="def-wrap">
 
       <div class="def-header">
-        <p class="def-label">{{ t('defense.label') }}</p>
-        <h2>{{ t('defense.headlineLine1') }}<br>{{ t('defense.headlineLine2') }}</h2>
+        <p class="def-label gl-label">{{ t('defense.label') }}</p>
+        <h2>{{ t('defense.headlineLine1') }} {{ t('defense.headlineLine2') }}</h2>
       </div>
 
       <!-- Canvas sim + big result -->
@@ -156,7 +156,10 @@ const layers = t('defense.layers') as Array<{ name: string, alt: string, range: 
   @include reveal;
   .revealed & { opacity: 1; transform: none; }
 
-  .def-label { font-size: $type-label; font-weight: 700; color: $uae-red; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: $sp-8; }
+  .def-label {
+    // color: $uae-red;
+    margin-bottom: $sp-8;
+  }
   h2 { font-size: $type-h1; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; }
 }
 
@@ -280,7 +283,7 @@ const layers = t('defense.layers') as Array<{ name: string, alt: string, range: 
 }
 
 .comp-sys { font-size: $type-small; font-weight: 600; color: $text-2; text-align: right; }
-.comp-track { height: 10px; background: rgba(255,255,255,0.04); border-radius: 5px; overflow: hidden; }
+.comp-track { height: 10px; background: rgba(0,0,0,0.07); border-radius: 5px; overflow: hidden; }
 .comp-bar { height: 100%; border-radius: 5px; transition: width 1.2s $ease-out; }
 .comp-pct { font-size: $type-body; font-weight: 900; text-align: right; }
 .comp-note { font-size: $type-small; color: $text-3; font-style: italic; }
@@ -302,7 +305,7 @@ const layers = t('defense.layers') as Array<{ name: string, alt: string, range: 
 
 .alt-scale {
   position: relative;
-  font-size: $type-label;
+  font-size: 1rem;
   color: $text-3;
 
   @include mobile { display: none; }
@@ -320,6 +323,7 @@ const layers = t('defense.layers') as Array<{ name: string, alt: string, range: 
   display: flex;
   flex-direction: column-reverse;
   gap: 2px;
+  min-height: 420px;
 }
 
 .alt-band {
@@ -328,12 +332,12 @@ const layers = t('defense.layers') as Array<{ name: string, alt: string, range: 
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 40px;
-  overflow: hidden;
+  min-height: 72px;
+  overflow: visible;
 
-  .ab-name { font-size: $type-small; font-weight: 800; }
-  .ab-what { font-size: $type-label; color: $text-2; white-space: normal; overflow: hidden; text-overflow: ellipsis; }
-  .ab-note { font-size: $type-label; color: $text-3; }
+  .ab-name { font-size: $type-small; font-weight: 800; line-height: 1.3; }
+  .ab-what { font-size: 0.75rem; color: $text-2; line-height: 1.4; }
+  .ab-note { font-size: 0.75rem; color: $text-3; line-height: 1.4; }
 }
 
 // Context

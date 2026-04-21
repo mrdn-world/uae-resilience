@@ -12,7 +12,7 @@ const { el, revealed } = useReveal()
 
       <!-- HERO VIZ: proportional bar — GDP vs SWF -->
       <div class="fin-header">
-        <p class="fin-label">{{ t('finance.label') }}</p>
+        <p class="fin-label gl-label">{{ t('finance.label') }}</p>
         <h2>{{ t('finance.headline') }}</h2>
         <p class="fin-sub" v-html="tHtml('finance.sub')"></p>
       </div>
@@ -23,7 +23,7 @@ const { el, revealed } = useReveal()
           <span class="pb-lbl">{{ t('finance.proportion.gdp.label') }}</span>
         </div>
         <div class="pb-segment swf" :style="{ flex: revealed ? 3 : 0 }">
-          <span class="pb-val">{{ t('finance.proportion.swf.val') }}</span><SourceTip :sources="t('finance.proportion.swfSources')" />
+          <span class="pb-val">{{ t('finance.proportion.swf.val') }}</span>
           <span class="pb-lbl">{{ t('finance.proportion.swf.label') }}</span>
         </div>
       </div>
@@ -121,7 +121,6 @@ const { el, revealed } = useReveal()
   @include reveal;
   .revealed & { opacity: 1; transform: none; }
 
-  .fin-label { font-size: $type-label; font-weight: 700; color: $uae-gold; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: $sp-8; }
   h2 { font-size: $type-h1; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: $sp-12; }
   .fin-sub { font-size: $type-body; color: $text-2; max-width: 600px; em { color: $uae-green; font-style: normal; font-weight: 700; } }
 }
@@ -145,8 +144,8 @@ const { el, revealed } = useReveal()
   overflow: hidden;
   min-width: 0;
 
-  &.gdp { background: rgba($data-1, 0.2); border-left: 4px solid $data-1; }
-  &.swf { background: rgba($uae-gold, 0.12); border-left: 4px solid $uae-gold; }
+  &.gdp { background: #039F4B; border-radius: 0.5rem; }
+  &.swf { background: #FFB563; border-radius: 0.5rem; }
 
   .pb-val { font-size: 22px; font-weight: 900; white-space: nowrap; }
   .pb-lbl { font-size: $type-small; color: $text-2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
@@ -172,10 +171,10 @@ const { el, revealed } = useReveal()
   margin-bottom: $sp-16;
 
   .fund-bar {
-    height: 6px;
+    height: 1.5rem;
     background: $uae-gold;
     border-radius: 3px;
-    margin-bottom: $sp-8;
+    margin-bottom: 0;
     transition: width 1.2s $ease-out 0.5s;
 
     &.med { background: $data-1; transition-delay: 0.7s; }
@@ -220,9 +219,9 @@ const { el, revealed } = useReveal()
 }
 
 .rm-country { font-size: $type-label; color: $text-3; text-align: right; }
-.rm-bar-bg { height: 8px; background: rgba(255,255,255,0.04); border-radius: 4px; overflow: hidden; }
+.rm-bar-bg { height: 1.5rem; background: rgba(0,0,0,0.07); border-radius: 4px; overflow: hidden; }
 .rm-bar {
-  height: 100%; border-radius: 4px; background: rgba(255,255,255,0.12);
+  height: 100%; border-radius: 4px; background: rgba(0,0,0,0.40);
   transition: width 0.8s $ease-out 0.3s;
   &.best { background: $uae-green; }
 }
@@ -264,7 +263,7 @@ const { el, revealed } = useReveal()
 
   &.danger { background: rgba($uae-red, 0.12); }
   &.surplus { background: rgba($uae-green, 0.2); }
-  &.headroom { background: rgba(255,255,255,0.03); }
+  &.headroom { background: rgba(0,0,0,0.04); }
 
   .og-label {
     font-size: $type-label;
