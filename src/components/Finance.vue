@@ -129,10 +129,14 @@ const { el, revealed } = useReveal()
 .proportion-bar {
   display: flex;
   gap: 3px;
-  height: 72px;
+  height: 160px;
   margin-bottom: $sp-64;
   border-radius: $r-md;
   overflow: hidden;
+  @include mobile {
+    flex-direction: column;
+    height: 320px;
+  }
 }
 
 .pb-segment {
@@ -147,9 +151,19 @@ const { el, revealed } = useReveal()
   &.gdp { background: #039F4B; border-radius: 0.5rem; }
   &.swf { background: #FFB563; border-radius: 0.5rem; }
 
-  .pb-val { font-size: 22px; font-weight: 900; white-space: nowrap; }
-  .pb-lbl { font-size: $type-small; color: $text-2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-    @include mobile { display: none; }
+  .pb-val {
+    font-size: 22px;
+    font-weight: 900;
+    white-space: nowrap;
+  }
+  .pb-lbl {
+    font-size: $type-body;
+    color: $text-2;
+    // white-space: nowrap;
+    // overflow: hidden;
+    // text-overflow: ellipsis;
+    max-width: 25rem;
+    width: 100%;
   }
 }
 
@@ -218,7 +232,7 @@ const { el, revealed } = useReveal()
   align-items: center;
 }
 
-.rm-country { font-size: $type-label; color: $text-3; text-align: right; }
+.rm-country { font-size: $type-small; line-height: 1rem; color: $text-3; text-align: right; }
 .rm-bar-bg { height: 1.5rem; background: rgba(0,0,0,0.07); border-radius: 4px; overflow: hidden; }
 .rm-bar {
   height: 100%; border-radius: 4px; background: rgba(0,0,0,0.40);
@@ -226,7 +240,7 @@ const { el, revealed } = useReveal()
   &.best { background: $uae-green; }
 }
 .rm-val {
-  font-size: $type-label; color: $text-3; font-weight: 700;
+  font-size: $type-small; color: $text-3; font-weight: 700;
   &.best { color: $uae-green; }
 }
 
@@ -298,7 +312,15 @@ const { el, revealed } = useReveal()
   .og-mark-desc { display: block; font-size: $type-label; color: $text-3; }
 }
 
-.og-note { font-size: $type-small; color: $text-3; margin-top: $sp-8; strong { color: $uae-green; } }
+.og-note {
+  font-size: $type-small;
+  color: $text-3;
+  margin-top: 90px;
+  strong { color: $uae-green; }
+  @include mobile {
+    margin-top: 75px;
+  }
+}
 
 // Trust
 .trust { margin-bottom: 0; }
@@ -320,7 +342,15 @@ const { el, revealed } = useReveal()
   .tb-who { font-size: $type-label; color: $text-3; }
 }
 
-.trust-note { font-style: italic; }
+.trust-note {
+  font-size: $type-small;
+  color: $text-3;
+  margin-top: 60px;
+  strong { color: $uae-green; }
+  @include mobile {
+    margin-top: 25px;
+    }
+  }
 
 // Context
 .fin-context {

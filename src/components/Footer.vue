@@ -31,6 +31,7 @@ import { t } from '@/i18n'
     letter-spacing: -0.02em;
     margin-bottom: $sp-24;
     color: $uae-green;
+    line-height: 1.3;
   }
 
   p {

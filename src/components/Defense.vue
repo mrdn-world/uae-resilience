@@ -179,7 +179,7 @@ const layers = t('defense.layers') as Array<{ name: string, alt: string, range: 
 
 .sim-overlay {
   position: absolute;
-  bottom: $sp-24;
+  bottom: 114px;
   left: $sp-24;
   .so-big { font-size: 48px; font-weight: 900; color: $uae-green; letter-spacing: -0.03em; }
   .so-sub { font-size: $type-small; color: $text-2; }
