@@ -7,6 +7,15 @@ onMounted(() => requestAnimationFrame(() => show.value = true))
 
 <template>
   <section class="hero" :class="{ show }">
+    <div class="hero-top">
+      <div class="hero-top__grid">
+        <img class="hero-top__menu" src="/menu.svg" alt="menu" />
+        <img class="hero-top__logo" src="/logo.svg" alt="logo" />
+      </div>
+      <div class="hero-top__line" />
+    </div>
+    <video class="hero-bg" src="/UAE_Flag.mp4" loop autoplay muted playsinline></video>
+    <div class="hero-overlay"></div>
     <div class="hero-inner">
       <p class="hero-kicker">{{ t('hero.kicker') }}</p>
       <h1 class="hero-title">{{ t('hero.titleLine1') }}<br>{{ t('hero.titleLine2') }}</h1>
@@ -29,18 +38,74 @@ onMounted(() => requestAnimationFrame(() => show.value = true))
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: $sp-96 $sp-24;
-  @include mobile { padding: $sp-64 $sp-16; min-height: auto; }
+  padding: $sp-96 0;
+  background: #0B0F1A;
+  color: #F5F0E8;
+  position: relative;
+  overflow: hidden;
+  @include mobile {
+    padding: 25px 0;
+    min-height: auto;
+    flex-direction: column;
+    }
+}
+
+.hero-top {
+  @include container;
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: 3;
+  padding-bottom: 5rem;
+  &__grid {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__line {
+    width: 100%;
+    height: 1px;
+    margin-top: 4.5rem;
+    background-color: #fff;
+    @include mobile {
+      margin-top: 3rem;
+    }
+  }
+  @include mobile {
+    position: static;
+    transform: none;
+    padding-bottom: 2rem;
+  }
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(#0B0F1A, 0.62);
+  z-index: 1;
 }
 
 .hero-inner {
   @include container;
   width: 100%;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-kicker {
   font-size: $type-h3;
-  color: $text-3;
+  color: #8A8372;
   font-weight: 500;
   opacity: 0;
   transform: translateY(12px);
@@ -54,7 +119,7 @@ onMounted(() => requestAnimationFrame(() => show.value = true))
   letter-spacing: -0.03em;
   line-height: 1.05;
   margin: $sp-8 0 $sp-64;
-  color: $text-1;
+  color: #F5F0E8;
   opacity: 0;
   transform: translateY(16px);
   transition: all $dur-slow $ease-out 0.25s;
@@ -74,9 +139,12 @@ onMounted(() => requestAnimationFrame(() => show.value = true))
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, $uae-green, $uae-gold, $uae-red);
-  opacity: 0.3;
-  @include mobile { width: 2px; height: 100%; top: 0; left: 10px; background: linear-gradient(180deg, $uae-green, $uae-gold, $uae-red); }
+  background: $bg-1;
+  @include mobile {
+    width: 2px;
+    height: 100%;
+    top: 5px;
+    left: 6px;}
 }
 
 .tl-node {
@@ -98,16 +166,11 @@ onMounted(() => requestAnimationFrame(() => show.value = true))
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: $bg-0;
-  border: 3px solid $uae-green;
-
-  .tl-node:nth-child(3) & { border-color: $uae-gold; }
-  .tl-node:nth-child(4) & { border-color: $uae-red; }
+  background: #0B0F1A;
+  border: 3px solid $bg-1;
 }
 
 .tl-yr {
-  .tl-node:nth-child(3) & { color: $uae-gold; }
-  .tl-node:nth-child(4) & { color: $uae-red; }
 
   @include mobile { top: 2px; }
 }
@@ -115,12 +178,10 @@ onMounted(() => requestAnimationFrame(() => show.value = true))
 .tl-yr {
   font-size: $type-label;
   font-weight: 800;
-  color: $uae-green;
+  color: $bg-1;
   letter-spacing: 0.05em;
   margin-bottom: $sp-4;
 
-  .tl-node:nth-child(3) & { color: $uae-gold; }
-  .tl-node:nth-child(4) & { color: $uae-red; }
 }
 
 .tl-what {
@@ -128,11 +189,12 @@ onMounted(() => requestAnimationFrame(() => show.value = true))
   font-weight: 700;
   margin-bottom: $sp-8;
   line-height: 1.3;
+  color: #F5F0E8;
 }
 
 .tl-result {
   font-size: $type-body;
-  color: $text-2;
+  color: #C4BBA8;
   line-height: 1.6;
 }
 </style>
