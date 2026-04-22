@@ -237,7 +237,12 @@ const { el, revealed } = useReveal()
   p { font-size: $type-small; color: $text-2; line-height: 1.6; }
 }
 
-.regional { margin-bottom: $sp-32; }
+.regional {
+  margin-bottom: $sp-32;
+  & .src-tip {
+    transform: translateY(-0.3rem);
+  }
+  }
 
 .reg-metrics {
   display: flex;
@@ -308,15 +313,21 @@ const { el, revealed } = useReveal()
 }
 
 // Oil gauge
-.oil-gauge { margin-bottom: 0; }
+.oil-gauge {
+  margin-bottom: 0;
+  & .src-tip {
+    transform: translateY(-0.3rem);
+  }
+}
 
 .og-bar {
   display: flex;
   height: 40px;
   border-radius: $r-sm;
   overflow: hidden;
-  margin-bottom: $sp-48;
+  margin-bottom: 1rem;
   gap: 2px;
+  transform: translateY(6px);
 }
 
 .og-zone {
@@ -356,12 +367,21 @@ const { el, revealed } = useReveal()
   .og-mark-line {
     display: block;
     width: 1px;
-    height: 12px;
+    height: 3rem;
     background: $text-3;
     margin: 0 auto $sp-4;
   }
-  .og-mark-val { display: block; font-size: $type-body; font-weight: 800; }
-  .og-mark-desc { display: block; font-size: $type-label; color: $text-3; }
+  .og-mark-val {
+    display: block;
+    font-size: $type-label;
+    font-weight: 700;
+  }
+  .og-mark-desc {
+    display: block;
+    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    color: $text-3;
+    line-height: 120%;
+  }
 }
 
 .og-note {

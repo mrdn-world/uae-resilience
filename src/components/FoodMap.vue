@@ -7,10 +7,10 @@ import { t } from '@/i18n'
 const mapEl = ref<HTMLElement | null>(null)
 
 const routeGeo = [
-  { from: [20.5, 78.9] as [number, number], pct: 22, color: '#D4A843' },
+  { from: [20.5, 78.9] as [number, number], pct: 22, color: '#B68A35' },
   { from: [48.8, 2.3] as [number, number], pct: 18, color: '#5B9FE4' },
-  { from: [-15.8, -47.9] as [number, number], pct: 16, color: '#E8564A' },
-  { from: [-25.3, 133.8] as [number, number], pct: 12, color: '#2ECC87' },
+  { from: [-15.8, -47.9] as [number, number], pct: 16, color: '#A44200' },
+  { from: [-25.3, 133.8] as [number, number], pct: 12, color: '#039F4B' },
   { from: [1.3, 103.8] as [number, number], pct: 11, color: '#A77BCA' },
   { from: [-1.3, 36.8] as [number, number], pct: 8, color: '#8A8372' },
 ]
@@ -62,9 +62,9 @@ onMounted(() => {
   // UAE pulsing dot
   L.circleMarker(uae, {
     radius: 6,
-    fillColor: '#2ECC87',
+    fillColor: '#039F4B',
     fillOpacity: 0.9,
-    color: '#2ECC87',
+    color: '#039F4B',
     weight: 8,
     opacity: 0.2,
   }).addTo(map)

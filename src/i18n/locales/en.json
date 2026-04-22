@@ -224,9 +224,9 @@
     "altMarks": ["150 km", "40 km", "25 km", "15 km", "Ground"],
     "layers": [
       { "name": "THAAD", "alt": "150 km", "range": "200 km", "what": "Kills ballistic missiles in space before re-entry", "note": "First nation outside the US to have it", "color": "#5B9FE4" },
-      { "name": "Patriot PAC-3", "alt": "40 km", "range": "70 km", "what": "Intercepts tactical missiles in the upper atmosphere", "note": "9 batteries, 108 launchers", "color": "#2ECC87" },
+      { "name": "Patriot PAC-3", "alt": "40 km", "range": "70 km", "what": "Intercepts tactical missiles in the upper atmosphere", "note": "9 batteries, 108 launchers", "color": "#039F4B" },
       { "name": "Cheongung-II", "alt": "25 km", "range": "40 km", "what": "Medium-range defense ($3.5B deal with South Korea)", "note": "Battle-tested March 2026, >90% effective", "color": "#A77BCA" },
-      { "name": "Pantsir-S1", "alt": "15 km", "range": "20 km", "what": "Short-range point defense — catches what others miss", "note": "~50 units deployed", "color": "#E8564A" },
+      { "name": "Pantsir-S1", "alt": "15 km", "range": "20 km", "what": "Short-range point defense — catches what others miss", "note": "~50 units deployed", "color": "#A44200" },
       { "name": "Laser & drone killers", "alt": "2 km", "range": "5 km", "what": "SkyKnight + Silent Hunter 30kW laser — last line vs drones", "note": "Made in UAE (EDGE Group)", "color": "#D4A843" }
     ],
     "sources": [

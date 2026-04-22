@@ -6,6 +6,13 @@ import SourceTip from './SourceTip.vue'
 import Sources from './Sources.vue'
 const { el, revealed } = useReveal()
 
+const simColors = {
+  skyline:      '#1E2536',
+  missileTrail: 'rgba(232,86,74,0.3)',
+  missileDot:   'rgba(232,86,74,0.7)',
+  sparkRgb:     '46,204,135',   // used as rgba(R,G,B, opacity)
+}
+
 // Mini missile canvas
 const canvasRef = ref<HTMLCanvasElement | null>(null)
 let raf = 0
@@ -35,7 +42,7 @@ onMounted(() => {
     frame++
 
     // Skyline
-    ctx.fillStyle = '#1E2536'
+    ctx.fillStyle = simColors.skyline
     for (const [px, bh] of [[.08,50],[.15,80],[.22,40],[.3,100],[.38,60],[.45,110],[.53,45],[.6,85],[.68,70],[.75,95],[.83,55],[.9,75]]) {
       ctx.fillRect(px * w - 5, h - bh, 10, bh)
     }
@@ -55,9 +62,9 @@ onMounted(() => {
       }
       if (m.y > h - 15) { m.alive = false; continue }
       ctx.beginPath(); ctx.moveTo(m.x - m.vx * 5, m.y - m.vy * 5); ctx.lineTo(m.x, m.y)
-      ctx.strokeStyle = 'rgba(232,86,74,0.3)'; ctx.lineWidth = 1; ctx.stroke()
+      ctx.strokeStyle = simColors.missileTrail; ctx.lineWidth = 1; ctx.stroke()
       ctx.beginPath(); ctx.arc(m.x, m.y, 1.5, 0, Math.PI * 2)
-      ctx.fillStyle = 'rgba(232,86,74,0.7)'; ctx.fill()
+      ctx.fillStyle = simColors.missileDot; ctx.fill()
     }
 
     for (let i = sparks.length - 1; i >= 0; i--) {
@@ -65,7 +72,7 @@ onMounted(() => {
       s.x += s.vx; s.y += s.vy; s.vx *= .95; s.vy *= .95; s.life -= .03
       if (s.life <= 0) { sparks.splice(i, 1); continue }
       ctx.beginPath(); ctx.arc(s.x, s.y, s.life, 0, Math.PI * 2)
-      ctx.fillStyle = `rgba(46,204,135,${s.life * .6})`; ctx.fill()
+      ctx.fillStyle = `rgba(${simColors.sparkRgb},${s.life * .6})`; ctx.fill()
     }
 
     if (frame % 100 === 0) { missiles = missiles.filter(m => m.alive); if (sparks.length > 200) sparks.length = 200 }
