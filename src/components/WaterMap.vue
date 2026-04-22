@@ -60,14 +60,14 @@ onMounted(() => {
   })
 
   // ADCOP pipeline
-  L.polyline(pipeline, {
-    color: '#D4A843',
-    weight: 3,
-    opacity: 0.6,
-  }).bindTooltip(t('waterMap.pipelineLabel'), {
-    direction: 'top',
-    className: 'pipe-label',
-  }).addTo(map)
+  // L.polyline(pipeline, {
+  //   color: '#D4A843',
+  //   weight: 3,
+  //   opacity: 0.6,
+  // }).bindTooltip(t('waterMap.pipelineLabel'), {
+  //   direction: 'top',
+  //   className: 'pipe-label',
+  // }).addTo(map)
 
   // Desal plants
   desalPlants.forEach((p) => {
@@ -98,7 +98,6 @@ onMounted(() => {
     <div class="wm-header">
       <span class="wm-legend-item"><span class="wm-dot" style="background: #5B9FE4"></span>{{ t('waterMap.legendDesal') }}</span>
       <span class="wm-legend-item"><span class="wm-dot" style="background: #2ECC87"></span>{{ t('waterMap.legendWells') }}</span>
-      <span class="wm-legend-item"><span class="wm-line" style="background: #D4A843"></span>{{ t('waterMap.legendPipeline') }}</span>
     </div>
     <div ref="mapEl" class="water-map"></div>
   </div>

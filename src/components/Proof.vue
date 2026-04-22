@@ -33,7 +33,7 @@ const { el, revealed } = useReveal()
         </div>
 
         <div class="expat-text">
-          <div class="et-big">{{ t('proof.expatBig') }}<SourceTip :sources="t('proof.expatSources')" /></div>
+          <div class="et-big">{{ t('proof.expatBig') }}</div>
           <div class="et-label">{{ t('proof.expatLabel') }}</div>
           <p>{{ t('proof.expatP1') }}</p>
           <p v-html="tHtml('proof.expatP2')"></p>

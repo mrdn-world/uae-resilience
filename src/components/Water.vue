@@ -22,46 +22,6 @@ const tradeoffRowGeo = [
         <h2 class="header-h2">{{ t('water.headlineLine1') }}<br>{{ t('water.headlineLine2') }}</h2>
       </div>
 
-      <!-- UNIFIED: one table — consumption ↔ duration tradeoff -->
-      <div class="water-tradeoff">
-        <div class="wt-header">{{ t('water.tradeoff.header') }} <SourceTip :sources="t('water.tradeoff.headerSources')" /></div>
-        <div class="wt-table">
-          <div class="wt-row" v-for="(r, i) in t('water.tradeoff.rows')" :key="r.use">
-            <!-- Usage bar -->
-            <div class="wtr-use">
-              <div class="wtr-bar-bg">
-                <div class="wtr-bar" :style="{ width: revealed ? tradeoffRowGeo[i].usePct + '%' : '0%', background: tradeoffRowGeo[i].color, transitionDelay: `${i * 0.15}s` }"></div>
-              </div>
-              <span class="wtr-val" :style="{ color: tradeoffRowGeo[i].color }">{{ r.use }}</span>
-            </div>
-
-            <!-- What it means -->
-            <div class="wtr-means">{{ r.means }}</div>
-
-            <!-- Arrow -->
-            <div class="wtr-arrow">→</div>
-
-            <!-- Duration bar -->
-            <div class="wtr-lasts">
-              <div class="wtr-bar-bg">
-                <div class="wtr-bar" :style="{ width: revealed ? tradeoffRowGeo[i].lastPct + '%' : '0%', background: tradeoffRowGeo[i].color, transitionDelay: `${0.3 + i * 0.15}s` }"></div>
-              </div>
-              <span class="wtr-val" :style="{ color: tradeoffRowGeo[i].color }">{{ r.lasts }}</span>
-            </div>
-          </div>
-
-          <!-- Column labels -->
-          <div class="wt-labels">
-            <span>{{ t('water.tradeoff.labelUse') }}</span>
-            <span></span>
-            <span></span>
-            <span>{{ t('water.tradeoff.labelLasts') }}</span>
-          </div>
-        </div>
-
-        <div class="wt-underground" v-html="tHtml('water.tradeoff.underground')"></div>
-      </div>
-
       <!-- Desal + infrastructure -->
       <div class="water-grid">
         <div class="water-left">
@@ -125,8 +85,6 @@ const tradeoffRowGeo = [
 
       <!-- Infrastructure map -->
       <WaterMap />
-
-      <div class="water-context" v-html="tHtml('water.context')"></div>
 
       <Sources :items="t('water.sources')" />
     </div>

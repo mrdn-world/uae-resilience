@@ -18,7 +18,7 @@ onMounted(() => requestAnimationFrame(() => show.value = true))
     <div class="hero-overlay"></div>
     <div class="hero-inner">
       <p class="hero-kicker">{{ t('hero.kicker') }}</p>
-      <h1 class="hero-title">{{ t('hero.titleLine1') }}<br>{{ t('hero.titleLine2') }}</h1>
+      <h1 class="hero-title">{{ t('hero.titleLine1') }}</h1>
 
       <div class="hero-timeline">
         <div class="tl-line"></div>
