@@ -178,10 +178,19 @@ const layers = t('defense.layers') as Array<{ name: string, alt: string, range: 
 
 .sim-overlay {
   position: absolute;
-  bottom: 114px;
+  bottom: 150px;
   left: $sp-24;
-  .so-big { font-size: 48px; font-weight: 900; color: $uae-green; letter-spacing: -0.03em; }
-  .so-sub { font-size: $type-small; color: $text-2; }
+  .so-big {
+    font-size: 48px;
+    line-height: 100%;
+    font-weight: 900;
+    color: $uae-green;
+    letter-spacing: -0.03em;
+  }
+  .so-sub {
+    font-size: $type-small;
+    color: $text-2;
+  }
 }
 
 // Missile dots
@@ -214,7 +223,7 @@ const layers = t('defense.layers') as Array<{ name: string, alt: string, range: 
   &.hit {
     background: $uae-red;
     opacity: 0.9;
-    box-shadow: 0 0 6px rgba($uae-red, 0.5);
+    // box-shadow: 0 0 6px rgba($uae-red, 0.5);
   }
 }
 

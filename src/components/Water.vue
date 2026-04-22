@@ -259,7 +259,14 @@ const tradeoffRowGeo = [
   border-radius: $r-sm;
   border: 1px solid rgba($data-1, 0.08);
 
-  .tw-name { font-size: $type-h3; font-weight: 800; color: $data-1; }
+  .tw-name {
+    font-size: $type-h3;
+    font-weight: 800;
+    color: $data-1;
+    & .src-tip {
+      transform: translateY(-0.3rem);
+    }
+  }
   .tw-title { font-size: $type-small; color: $text-2; margin-bottom: $sp-8; }
   .tw-stat { font-size: $type-body; font-weight: 700; margin-bottom: $sp-4; }
   .tw-context { font-size: $type-small; color: $text-3; strong { color: $text-1; } }

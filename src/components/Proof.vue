@@ -68,7 +68,7 @@ const { el, revealed } = useReveal()
   grid-template-columns: auto 1fr;
   gap: $sp-24;
   margin-bottom: $sp-64;
-  align-items: center;
+  align-items: flex-start;
   @include mobile { grid-template-columns: 1fr; }
 }
 
@@ -77,6 +77,11 @@ const { el, revealed } = useReveal()
   grid-template-columns: repeat(10, 1fr);
   gap: 2px;
   max-width: 200px;
+  transform: translateY(0.7rem);
+  @include mobile {
+    grid-template-columns: repeat(20, 1fr);
+    max-width: 270px;
+  }
 }
 
 .ew-cell {
@@ -91,11 +96,11 @@ const { el, revealed } = useReveal()
   }
 
   &.expat svg {
-    .revealed & { fill: rgba($uae-gold, 0.55); }
+    .revealed & { fill: rgba($uae-gold, 1); }
   }
 
   &:not(.expat) svg {
-    .revealed & { fill: rgba($uae-green, 0.5); }
+    .revealed & { fill: rgba($uae-green, 1); }
   }
 }
 

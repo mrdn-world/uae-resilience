@@ -67,6 +67,16 @@ onMounted(() => requestAnimationFrame(() => show.value = true))
     display: flex;
     justify-content: space-between;
   }
+  &__logo {
+    @include mobile {
+      max-width: 14.375rem;
+    }
+  }
+  &__menu {
+    @include mobile {
+      max-width: 3.125rem;
+    }
+  }
   &__line {
     width: 100%;
     height: 1px;

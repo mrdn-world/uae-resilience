@@ -151,7 +151,7 @@ const { el, revealed } = useReveal()
   min-width: 0;
 
   &.gdp { background: #039F4B; border-radius: 0.5rem; }
-  &.swf { background: #FFB563; border-radius: 0.5rem; }
+  &.swf { background: #B68A35; border-radius: 0.5rem; }
 
   .pb-val {
     font-size: 2.25rem;
@@ -264,12 +264,23 @@ const { el, revealed } = useReveal()
 
 .rm-bar-row {
   display: grid;
-  grid-template-columns: 56px 1fr 36px;
+  grid-template-columns: 72px 1fr 36px;
   gap: $sp-8;
   align-items: center;
+  @include mobile {
+    grid-template-columns: 64px 1fr 30px;
+  }
 }
 
-.rm-country { font-size: $type-small; line-height: 1rem; color: $text-3; text-align: right; }
+.rm-country {
+  font-size: $type-small;
+  line-height: 1rem;
+  color: $text-3;
+  text-align: right;
+  @include mobile {
+    font-size: 0.775rem;
+  }
+}
 .rm-bar-bg { height: 1.5rem; background: rgba(0,0,0,0.07); border-radius: 4px; overflow: hidden; }
 .rm-bar {
   height: 100%; border-radius: 4px; background: rgba(0,0,0,0.40);
@@ -279,6 +290,10 @@ const { el, revealed } = useReveal()
 .rm-val {
   font-size: $type-small; color: $text-3; font-weight: 700;
   &.best { color: $uae-green; }
+  @include mobile {
+    font-size: 0.775rem;
+  }
+
 }
 
 .reg-note { font-size: $type-small; color: $text-3; font-style: italic; }
