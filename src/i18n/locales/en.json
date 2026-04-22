@@ -25,17 +25,17 @@
       "title": "Three funds, three roles",
       "items": [
         {
-          "val": "~$1.13 trillion",
+          "val": "~$1.13T",
           "name": "Abu Dhabi Investment Authority",
           "desc": "A global long-term investor founded in 1976. ADIA invests across asset classes and geographies."
         },
         {
-          "val": "$385 billion",
+          "val": "$385B",
           "name": "Mubadala",
           "desc": "Focuses on long-term strategic investing across sectors, including semiconductors, aerospace, healthcare, and AI-related industries."
         },
         {
-          "val": "$251 billion",
+          "val": "$251B",
           "name": "ADQ",
           "desc": "Owns and develops businesses tied to critical infrastructure and supply chains."
         }

@@ -166,7 +166,7 @@ onMounted(() => requestAnimationFrame(() => show.value = true))
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: #0B0F1A;
+  background: #4a4c54;
   border: 3px solid $bg-1;
 }
 

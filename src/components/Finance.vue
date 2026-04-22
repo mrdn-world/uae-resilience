@@ -33,10 +33,12 @@ const { el, revealed } = useReveal()
         <div class="funds">
           <h3>{{ t('finance.funds.title') }}</h3>
           <div class="fund" v-for="(f, i) in t('finance.funds.items')" :key="f.name">
-            <div class="fund-bar" :class="{ med: i === 1, sm: i === 2 }" :style="{ width: revealed ? (i === 0 ? '100%' : i === 1 ? '30%' : '20%') : '0' }"></div>
+            <span class="fund-name">{{ f.name }}</span>
+            <div class="fund-bar" :class="{ med: i === 1, sm: i === 2 }" :style="{ width: revealed ? (i === 0 ? '100%' : i === 1 ? '30%' : '20%') : '0' }">
+            <span class="fund-val">{{ f.val }}</span>
+            </div>
             <div class="fund-info">
-              <span class="fund-val">{{ f.val }}</span>
-              <span class="fund-name">{{ f.name }}</span>
+              <!-- <span class="fund-val">{{ f.val }}</span> -->
               <span class="fund-desc">{{ f.desc }}</span>
             </div>
           </div>
@@ -178,26 +180,52 @@ const { el, revealed } = useReveal()
 
 // Funds
 .funds {
-  h3 { font-size: $type-h3; font-weight: 700; margin-bottom: $sp-24; }
+  h3 {
+    font-size: $type-h3;
+    font-weight: 700;
+    margin-bottom: $sp-24;
+  }
 }
 
 .fund {
-  margin-bottom: $sp-16;
-
+  margin-bottom: 2.5rem;
+  @include mobile { margin-bottom: 1.5rem; }
   .fund-bar {
-    height: 1.5rem;
-    background: $uae-gold;
+    height: 3rem;
+    background: $uae-green;
     border-radius: 3px;
     margin-bottom: 0;
     transition: width 1.2s $ease-out 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 0.5rem;
+    margin-bottom: 0.6rem;
 
-    &.med { background: $data-1; transition-delay: 0.7s; }
+    &.med { background: $uae-green; transition-delay: 0.7s; }
     &.sm { background: $uae-green; transition-delay: 0.9s; }
   }
 
-  .fund-val { font-size: $type-h3; font-weight: 800; display: block; }
-  .fund-name { font-size: $type-small; color: $text-2; font-weight: 600; display: block; margin-bottom: $sp-4; }
-  .fund-desc { font-size: $type-small; color: $text-3; line-height: 1.6; }
+  .fund-val {
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: block;
+    @include mobile { font-size: 1rem; }
+  }
+  .fund-name {
+    font-size: $type-label;
+    color: $text-2;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 12px;
+    @include mobile { font-size: 1rem; }
+  }
+  .fund-desc {
+    margin-top: 1rem;
+    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    color: $text-3;
+    line-height: 120%;
+  }
 }
 
 // Regional
@@ -211,12 +239,18 @@ const { el, revealed } = useReveal()
 .reg-metrics {
   display: flex;
   flex-direction: column;
-  gap: $sp-24;
+  gap: 2.5rem;
   margin: $sp-16 0;
 }
 
 .reg-metric {
-  .rm-name { font-size: $type-small; font-weight: 700; color: $text-2; margin-bottom: $sp-8; }
+  .rm-name {
+    font-size: $type-label;
+    font-weight: 700;
+    color: $text-2;
+    margin-bottom: 12px;
+    @include mobile { font-size: 1rem; }
+  }
 }
 
 .rm-bars {
