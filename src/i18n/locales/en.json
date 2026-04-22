@@ -141,7 +141,7 @@
   "water": {
     "label": "Water security",
     "headlineLine1": "In one of the driest places on Earth,",
-    "headlineLine2": "every drop is manufactured.",
+    "headlineLine2": "most drinking water has to be made",
     "tradeoff": {
       "header": "The less you use, the longer reserves last",
       "headerSources": [
@@ -157,42 +157,44 @@
       "underground": "Plus: {strong}300 underground wells{/strong} in Abu Dhabi store 26 million m³ of treated water beneath the desert — an additional 90-day backup."
     },
     "desal": {
-      "title": "How the UAE makes water from ocean",
-      "step1": "Seawater intake from the Gulf",
-      "step2": "Pushed through membranes at extreme pressure (reverse osmosis) — salt and impurities are filtered out",
-      "step3": "Clean drinking water. Piped to every home, office, and farm.",
-      "plantsHeader": "~70 desalination plants along the coast",
-      "plantsNote": "14% of all desalination on Earth — in a country smaller than South Carolina",
+      "title": "How the UAE gets fresh water from the sea",
+      "step1": "Seawater from the Gulf",
+      "step2": "Reverse osmosis removes salt and impurities",
+      "step3": "Drinking water enters the network",
+      "plantsHeader": "~70 major desalination plants",
+      "plantsNote": "These plants account for around 14% of the world’s total production of desalinated water.",
       "taweelahName": "Taweelah",
       "taweelahSources": [
-        { "label": "EWEC", "url": "https://www.ewec.ae/" }
+        { "label": "Acwa", "url": "https://acwapower.com/en/what-we-do/projects/taweelah-ro-desalination-iwp/" }
       ],
-      "taweelahTitle": "World's largest reverse osmosis plant",
+      "taweelahTitle": "World’s largest reverse osmosis plant",
       "taweelahStat": "909,200 m³ of clean water per day",
-      "taweelahContext": "That fills an Olympic swimming pool every {strong}2.5 minutes{/strong}. Non-stop."
+      "taweelahContext": "That is enough to fill an Olympic swimming pool about every 4 minutes, nonstop"
     },
     "wells": {
       "title": "Underground water reserves",
-      "label": "300 wells across Abu Dhabi (showing 1 dot per 5 wells)",
-      "statVal": "26M m³",
-      "statDesc": "of treated water stored underground — a 90-day emergency supply, banked beneath the desert"
+      "label": "~300 wells in Abu Dhabi (one dot = five wells)",
+      "statVal": "26 million m³",
+      "statDesc": "of water stored underground, enough to supply Abu Dhabi for up to 90 days in an emergency"
     },
     "hassyan": {
-      "val": "$920M",
-      "name": "Hassyan Solar Desal",
-      "desc": "Next-gen: solar-powered desalination. Opening 2027. Clean energy making clean water."
+      "val": "$920 million",
+      "name": "Hassyan SWRO",
+      "desc": "A next-generation reverse osmosis desalination project in Dubai, scheduled for full completion in Q1 2027"
     },
-    "context": "{strong}Context:{/strong} Groundwater depletes 20x faster than nature replenishes it. Desalination plants sit on the coast — physically vulnerable to attack. And 550 liters per day per person is one of the highest consumption rates on Earth. The infrastructure is impressive. The dependency on it is the risk.",
     "sources": [
+      { "label": "The UAE Government", "url": "https://u.ae/en/information-and-services/environment-and-energy/water-and-energy/water-" },      
       { "label": "UAE Water Strategy 2036", "url": "https://u.ae/en/about-the-uae/strategies-initiatives-and-awards/strategies-plans-and-visions/environment-and-energy/the-uae-water-security-strategy-2036" },
-      { "label": "EWEC", "url": "https://www.ewec.ae/" },
+      { "label": "Acwa", "url": "https://acwapower.com/en/what-we-do/projects/taweelah-ro-desalination-iwp/" },
+      { "label": "GRIPP", "url": "https://gripp.iwmi.org/natural-infrastructure/water-storage/a-strategic-water-reserve-in-abu-dhabi/" },
+      { "label": "DEWA", "url": "https://www.dewa.gov.ae/en/about-us/strategic-initiatives/hassyan" },
       { "label": "FAO AQUASTAT", "url": "https://www.fao.org/aquastat/en/" },
       { "label": "Bayanat.ae — Water", "url": "https://data.bayanat.ae/en_GB/group/water" }
     ]
   },
   "waterMap": {
     "legendDesal": "Desalination plants",
-    "legendWells": "Underground water storage (ASR wells)",
+    "legendWells": "Underground water storage",
     "legendPipeline": "ADCOP oil bypass pipeline",
     "pipelineLabel": "ADCOP Pipeline — 1.5M barrels/day bypassing Hormuz",
     "plants": [
