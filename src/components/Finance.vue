@@ -13,7 +13,7 @@ const { el, revealed } = useReveal()
       <!-- HERO VIZ: proportional bar — GDP vs SWF -->
       <div class="fin-header">
         <p class="fin-label gl-label">{{ t('finance.label') }}</p>
-        <h2>{{ t('finance.headline') }}</h2>
+        <h2 class="header-h2">{{ t('finance.headline') }}</h2>
         <p class="fin-sub" v-html="tHtml('finance.sub')"></p>
       </div>
 
@@ -123,7 +123,7 @@ const { el, revealed } = useReveal()
   @include reveal;
   .revealed & { opacity: 1; transform: none; }
 
-  h2 { font-size: $type-h1; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: $sp-12; }
+
   .fin-sub { font-size: $type-body; color: $text-2; max-width: 600px; em { color: $uae-green; font-style: normal; font-weight: 700; } }
 }
 
@@ -144,8 +144,8 @@ const { el, revealed } = useReveal()
 .pb-segment {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 0 $sp-16;
+  justify-content: start;
+  padding: 0.5rem $sp-16 0.5rem $sp-16;
   transition: flex $dur-slow $ease-out 0.3s;
   overflow: hidden;
   min-width: 0;
@@ -154,9 +154,12 @@ const { el, revealed } = useReveal()
   &.swf { background: #FFB563; border-radius: 0.5rem; }
 
   .pb-val {
-    font-size: 22px;
+    font-size: 2.25rem;
     font-weight: 900;
     white-space: nowrap;
+    @include mobile {
+      font-size: 1.5rem;
+    }
   }
   .pb-lbl {
     font-size: $type-body;

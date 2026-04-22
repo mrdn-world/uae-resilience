@@ -13,7 +13,7 @@ const { el, revealed } = useReveal()
 
       <div class="food-header">
         <p class="food-label gl-label">{{ t('food.label') }}</p>
-        <h2>{{ t('food.headlineLine1') }}<br>{{ t('food.headlineLine2') }}</h2>
+        <h2 class="header-h2">{{ t('food.headlineLine1') }}<br>{{ t('food.headlineLine2') }}</h2>
       </div>
 
       <!-- Key facts: compact, side by side -->
@@ -72,7 +72,6 @@ const { el, revealed } = useReveal()
     // color: $uae-green;
     margin-bottom: $sp-8;
   }
-  h2 { font-size: $type-h1; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; }
 }
 
 // Food facts — compact

@@ -12,7 +12,7 @@ const { el, revealed } = useReveal()
 
       <div class="proof-header">
         <p class="proof-label gl-label">{{ t('proof.label') }}</p>
-        <h2>{{ t('proof.headlineLine1') }}<br>{{ t('proof.headlineLine2') }}</h2>
+        <h2 class="header-h2">{{ t('proof.headlineLine1') }}<br>{{ t('proof.headlineLine2') }}</h2>
       </div>
 
       <!-- Waffle: 100 people, 88 are expats -->
@@ -60,7 +60,6 @@ const { el, revealed } = useReveal()
     // color: $uae-gold;
     margin-bottom: $sp-8;
   }
-  h2 { font-size: $type-h1; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; }
 }
 
 // Expat waffle + text

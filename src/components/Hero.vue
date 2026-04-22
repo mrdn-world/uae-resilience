@@ -47,6 +47,7 @@ onMounted(() => requestAnimationFrame(() => show.value = true))
     padding: 25px 0;
     min-height: auto;
     flex-direction: column;
+    padding-bottom: 5rem;
     }
 }
 
@@ -66,7 +67,7 @@ onMounted(() => requestAnimationFrame(() => show.value = true))
   &__line {
     width: 100%;
     height: 1px;
-    margin-top: 4.5rem;
+    margin-top: 3rem;
     background-color: #fff;
     @include mobile {
       margin-top: 3rem;
@@ -104,26 +105,28 @@ onMounted(() => requestAnimationFrame(() => show.value = true))
 }
 
 .hero-kicker {
-  font-size: $type-h3;
-  color: #8A8372;
+  font-size: 2rem;
+  color: $bg-1;
   font-weight: 500;
   opacity: 0;
   transform: translateY(12px);
   transition: all $dur-slow $ease-out 0.1s;
   .show & { opacity: 1; transform: none; }
+  @include mobile { font-size: 1.2rem; line-height: 120%; margin-bottom: 2rem; }
 }
 
 .hero-title {
-  font-size: $type-hero;
+  font-size: 6rem;
   font-weight: 900;
   letter-spacing: -0.03em;
-  line-height: 1.05;
+  line-height: 100%;
   margin: $sp-8 0 $sp-64;
-  color: #F5F0E8;
+  color: $bg-1;
   opacity: 0;
   transform: translateY(16px);
   transition: all $dur-slow $ease-out 0.25s;
   .show & { opacity: 1; transform: none; }
+  @include mobile { font-size: 3.5rem; }
 }
 
 .hero-timeline {
@@ -177,7 +180,6 @@ onMounted(() => requestAnimationFrame(() => show.value = true))
 
 .tl-yr {
   font-size: $type-label;
-  font-weight: 800;
   color: $bg-1;
   letter-spacing: 0.05em;
   margin-bottom: $sp-4;
@@ -185,16 +187,17 @@ onMounted(() => requestAnimationFrame(() => show.value = true))
 }
 
 .tl-what {
-  font-size: $type-h3;
+  // font-size: $type-h3;
+  font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: $sp-8;
   line-height: 1.3;
-  color: #F5F0E8;
+  color: $bg-1;
 }
 
 .tl-result {
-  font-size: $type-body;
-  color: #C4BBA8;
-  line-height: 1.6;
+  font-size: 1.375rem;
+  color: $bg-1;
+  line-height: 120%;
 }
 </style>

@@ -9,7 +9,7 @@ const { el, revealed } = useReveal()
 const tradeoffRowGeo = [
   { usePct: 100, lastPct: 4, color: '#E8564A' },
   { usePct: 16.5, lastPct: 36, color: '#D4A843' },
-  { usePct: 5.5, lastPct: 100, color: '#2ECC87' },
+  { usePct: 5.5, lastPct: 100, color: '#039F4B' },
 ]
 </script>
 
@@ -19,7 +19,7 @@ const tradeoffRowGeo = [
 
       <div class="water-header">
         <p class="water-label gl-label">{{ t('water.label') }}</p>
-        <h2>{{ t('water.headlineLine1') }}<br>{{ t('water.headlineLine2') }}</h2>
+        <h2 class="header-h2">{{ t('water.headlineLine1') }}<br>{{ t('water.headlineLine2') }}</h2>
       </div>
 
       <!-- UNIFIED: one table — consumption ↔ duration tradeoff -->
@@ -146,7 +146,6 @@ const tradeoffRowGeo = [
     // color: $data-1;
     margin-bottom: $sp-8;
   }
-  h2 { font-size: $type-h1; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; }
 }
 
 // Water tradeoff — unified

@@ -68,3 +68,12 @@ img, svg, canvas { display: block; max-width: 100%; }
   color: #0F0F0F;
   margin-bottom: $sp-8;
 }
+
+.header-h2 {
+  font-size: $type-h2;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: $sp-12;
+  max-width: 54rem;
+}

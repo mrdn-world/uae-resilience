@@ -85,7 +85,7 @@ const layers = t('defense.layers') as Array<{ name: string, alt: string, range: 
 
       <div class="def-header">
         <p class="def-label gl-label">{{ t('defense.label') }}</p>
-        <h2>{{ t('defense.headlineLine1') }} {{ t('defense.headlineLine2') }}</h2>
+        <h2 class="header-h2">{{ t('defense.headlineLine1') }} {{ t('defense.headlineLine2') }}</h2>
       </div>
 
       <!-- Canvas sim + big result -->
@@ -160,7 +160,6 @@ const layers = t('defense.layers') as Array<{ name: string, alt: string, range: 
     // color: $uae-red;
     margin-bottom: $sp-8;
   }
-  h2 { font-size: $type-h1; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; }
 }
 
 // Sim + results
