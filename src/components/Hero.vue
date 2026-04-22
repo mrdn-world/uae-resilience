@@ -43,6 +43,9 @@ onMounted(() => requestAnimationFrame(() => show.value = true))
   color: #F5F0E8;
   position: relative;
   overflow: hidden;
+  min-height: 50rem;
+  max-height: 67.5rem;
+  height: 100vh;
   @include mobile {
     padding: 25px 0;
     min-height: auto;
